@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wealth Advisor Plan Builder | Poppy Seisaki</title>
+<script>
+(function () {
+  var stored = localStorage.getItem('theme');
+  var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="nav-aurora"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <button class="theme-toggle" aria-label="Toggle dark mode"><span class="knob"><span class="icon icon-sun">&#9728;</span><span class="icon icon-moon">&#9789;</span></span></button>
+  </div>
+</nav>
+
+<aside class="side-nav">
+  <a href="#problem">Problem</a>
+  <a href="#goal">Goal</a>
+  <a href="#process">Process</a>
+  <a href="#final-ui">Final UI</a>
+  <a href="#results">Results</a>
+  <a href="#reflection">Reflection</a>
+</aside>
+
+<div class="wrap-wide">
+
+  <header class="cs-header">
+    <span class="tag tag-ongoing reveal">Ongoing · Release 1.1 shipped, iterating for Q3</span>
+    <h1 class="reveal">Wealth Advisor Plan Builder</h1>
+
+    <div class="meta-strip reveal">
+      <div class="meta-item">
+        <div class="label">Role</div>
+        <div class="value">Product Designer, sole designer on this project</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Team</div>
+        <div class="value">1 PM, 1 lead engineer, 1 data analyst, 2 frontend, 3 backend (AI squad)</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Timeframe</div>
+        <div class="value">3 sprints, shipped June, in active iteration</div>
+      </div>
+    </div>
+
+    <div class="status-flag reveal">
+      This product is live and iterating. Numbers below reflect Q2 results, Q3 changes are in progress.
+    </div>
+  </header>
+
+  <section class="section reveal" id="problem">
+    <h2>The problem</h2>
+    <div class="headline-stat"><span class="num">85%</span> of eligible users never opened the advisor</div>
+    <p>Two stacked gaps were compounding: a discovery gap (most users never found the advisor at all) and a completion gap (of those who did start, 9 in 10 never actually saw a finished plan).</p>
+    <ul class="plain">
+      <li>Retirement questions asked sensitive financial info too early, before trust was established</li>
+      <li>Investment conversations deflected to "emergency fund" instead of answering the actual question</li>
+      <li>General saving never asked "saving for what," so plans felt generic</li>
+      <li>Plans appeared as unreadable chat text, not as a distinct, findable artifact</li>
+    </ul>
+  </section>
+
+  <section class="section reveal" id="goal">
+    <h2>Goal</h2>
+    <div class="goal-card">
+      <p>Move plan save rate from a ~12% baseline toward a 30% target. Fix visibility so plans stop disappearing into chat text.</p>
+    </div>
+  </section>
+
+  <section class="section reveal" id="process">
+    <h2>Process</h2>
+    <p>Before designing, ran concept testing with interviewers on early plan concepts, fielded a 200-participant survey with financial advisors to validate demand and framing, and ran a usability test on the resulting flow.</p>
+
+    <div class="decision">
+      <div class="decision-index">Decision 1</div>
+      <h3>Turn the plan from chat text into a tappable card, leading to a full plan detail screen</h3>
+      <div class="why"><strong>Why:</strong> 43% of users who received a plan never saw it. It was surfaced as plain chat text, not as UI.</div>
+      <div class="img-row">
+        <div class="img-placeholder">Before: plan shown as wall of chat text</div>
+        <div class="img-placeholder">After: tappable plan card and detail screen</div>
+      </div>
+    </div>
+
+    <div class="decision">
+      <div class="decision-index">Decision 2</div>
+      <h3>Move setup actions (payday saver, ISA open) to the top of the plan detail screen</h3>
+      <div class="why"><strong>Why:</strong> users needed the "what do I do next" moment immediately, not buried below the plan explanation.</div>
+      <div class="img-placeholder">Layout before/after: setup actions repositioned to top</div>
+    </div>
+
+    <div class="decision">
+      <div class="decision-index">Decision 3</div>
+      <h3>Add a homepage "Start a Plan" entry point</h3>
+      <div class="why"><strong>Why:</strong> the discovery gap was structural. The advisor had no persistent, visible entry point anywhere in the app.</div>
+      <div class="img-placeholder">Homepage placement of "Start a Plan" entry point</div>
+    </div>
+
+    <div class="img-placeholder tall">Optional: flow diagram showing where users dropped off pre-launch (message 3-4 exits, topic-specific bounce points)</div>
+  </section>
+
+  <section class="section reveal" id="final-ui">
+    <h2>Final UI</h2>
+    <div class="img-row">
+      <div class="img-placeholder tall">Chat text plan (before)</div>
+      <div class="img-placeholder tall">Tappable card, full plan detail screen (after)</div>
+    </div>
+    <div class="img-placeholder">Homepage entry point screen</div>
+    <div class="img-placeholder">Optional: short clickable prototype embed or link</div>
+  </section>
+
+  <section class="section reveal" id="results">
+    <h2>Results</h2>
+    <div class="results-grid">
+      <div class="result-item">Sessions nearly doubled week-on-week post-launch: <strong>3,343 to 11,942</strong>.</div>
+      <div class="result-item">Plan save rate climbed from a <strong>12% baseline to a 15.2% peak</strong>.</div>
+      <div class="result-item">Plan Viewed to Saved conversion improved from about <strong>48% to 54.4%</strong>.</div>
+      <div class="result-item">CRM campaign drove <strong>+140% more planning sessions</strong> vs. control, with 85% first-time planners.</div>
+    </div>
+
+    <div class="callout callout-miss">
+      <strong>Honest miss:</strong> OKRs landed below target this quarter, funded plans reached 11k against a 30k goal, AUM reached £12M against a £45M goal. The discovery and completion fixes above are the lever for closing that gap.
+    </div>
+
+    <p class="framing">Framing: this is a discovery and funnel story, not a quality one. The product works once people actually reach it.</p>
+  </section>
+
+  <section class="section reveal" id="reflection">
+    <h2>Reflection</h2>
+    <p>The retirement questionnaire fix shipped too late to show up in Q2 data. Q3 will show its real effect.</p>
+    <p>Next: general saving still needs a "what are you saving for" step before generating a plan. The investment agent is still broken (87% failure rate, pivoting everything to emergency fund) and is the next priority.</p>
+    <p>Currently iterating on Q3 changes based on this Q2 data.</p>
+  </section>
+
+</div>
+
+<footer class="cs-footer">
+  <div class="wrap-wide">
+    <div class="cs-footer-inner reveal">
+      <div>
+        <div class="next-label">Next project</div>
+        <a class="next-project" href="payday-automation.html">Payday Automation Redesign →</a>
+      </div>
+      <a href="index.html#work">All work</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

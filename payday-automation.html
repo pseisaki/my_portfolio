@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payday Automation Redesign | Poppy Seisaki</title>
+<script>
+(function () {
+  var stored = localStorage.getItem('theme');
+  var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="nav-aurora"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <button class="theme-toggle" aria-label="Toggle dark mode"><span class="knob"><span class="icon icon-sun">&#9728;</span><span class="icon icon-moon">&#9789;</span></span></button>
+  </div>
+</nav>
+
+<aside class="side-nav">
+  <a href="#problem">Problem</a>
+  <a href="#goal">Goal</a>
+  <a href="#process">Process</a>
+  <a href="#final-ui">Final UI</a>
+  <a href="#results">Results</a>
+  <a href="#reflection">Reflection</a>
+</aside>
+
+<div class="wrap-wide">
+
+  <header class="cs-header">
+    <span class="tag tag-shipped reveal">Shipped</span>
+    <h1 class="reveal">Payday Automation Redesign</h1>
+
+    <div class="meta-strip reveal">
+      <div class="meta-item">
+        <div class="label">Role</div>
+        <div class="value">Product Designer, sole designer on this project</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Team</div>
+        <div class="value">1 PM, 1 lead engineer, 1 data analyst, 2 frontend, 2 backend (AI squad)</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Timeframe</div>
+        <div class="value">2 sprints, shipped, results measured over following weeks and months</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section reveal" id="problem">
+    <h2>The problem</h2>
+    <div class="headline-stat"><span class="num">35%</span> conversion: worst of all automation rules, despite being the highest-value one</div>
+    <p>The Payday Rule was the best-performing savings rule in the product. Users saved about £80/month on average once set up, but it was badly underused:</p>
+    <ul class="plain">
+      <li>Not included in onboarding at all</li>
+      <li>The most complex setup of all rules, only 35% conversion, worst across every rule</li>
+      <li>Less discoverable than the default rules</li>
+    </ul>
+
+    <div class="pull-quote">
+      <p>"[Placeholder customer comment. Replace with a real quote about the old setup being confusing or too many steps.]"</p>
+      <div class="source">[Source: customer support ticket, app review, or research session]</div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="goal">
+    <h2>Goal</h2>
+    <div class="goal-card">
+      <p>Target: 45 to 50% of automation-active users adopting Payday. Working bet: the problem was access and friction, not demand.</p>
+    </div>
+  </section>
+
+  <section class="section reveal" id="process">
+    <h2>Process</h2>
+
+    <div class="decision">
+      <div class="decision-index">Decision 1</div>
+      <h3>Strip setup to 2 inputs (amount and frequency), add smart defaults and a confirmation screen</h3>
+      <div class="why"><strong>Why:</strong> the multi-input form was the highest-friction setup flow anywhere in the product.</div>
+      <div class="img-row">
+        <div class="img-placeholder">Old multi-field setup form</div>
+        <div class="img-placeholder">New 2-input flow, side by side</div>
+      </div>
+    </div>
+
+    <div class="decision">
+      <div class="decision-index">Decision 2</div>
+      <h3>Add Payday as a 3rd onboarding option, after Automatic and Weekly</h3>
+      <div class="why"><strong>Why:</strong> most automation adoption happens at onboarding, and Payday was invisible there entirely.</div>
+      <div class="img-placeholder">Onboarding step before/after</div>
+    </div>
+
+  </section>
+
+  <section class="section reveal" id="final-ui">
+    <h2>Final UI</h2>
+    <p>This is the strongest visual asset in the case, lead with it.</p>
+    <div class="img-row">
+      <div class="img-placeholder tall">Old multi-field setup</div>
+      <div class="img-placeholder tall">New simplified flow</div>
+    </div>
+    <div class="img-placeholder">Onboarding placement screen</div>
+  </section>
+
+  <section class="section reveal" id="results">
+    <h2>Results</h2>
+    <div class="results-grid">
+      <div class="result-item">Weekly adoption rose from <strong>55% to 64%</strong> (+16% relative), beating the 45 to 50% target.</div>
+      <div class="result-item">Monthly Payday users grew from <strong>250K to 265K</strong> in 2 months.</div>
+      <div class="result-item">AUM increased from <strong>£19M to £22M</strong>, 98% attributable to this change.</div>
+      <div class="result-item">Conversion improved from <strong>35% to 39%</strong> (+9% relative).</div>
+      <div class="result-item">Halo effect: all-rules automation adoption up <strong>22%</strong>.</div>
+    </div>
+
+    <div class="callout callout-miss">
+      <strong>Honest miss:</strong> 39% conversion is still bottom of pack. Friction was reduced, not solved.
+    </div>
+
+    <div class="callout callout-limitation">
+      <strong>Honest limitation:</strong> no events tracking or GTM at launch. Onboarding placement and the simplified flow shipped together, so their individual effects can't be cleanly separated.
+    </div>
+  </section>
+
+  <section class="section reveal" id="reflection">
+    <h2>Reflection</h2>
+    <p>The onboarding amount nudge didn't land as designed: 46% picked £0-50 vs. 31% in-app. The preset and framing logic needs rework.</p>
+    <p>Next: isolate the onboarding effect from the simplification effect with better instrumentation.</p>
+  </section>
+
+</div>
+
+<footer class="cs-footer">
+  <div class="wrap-wide">
+    <div class="cs-footer-inner reveal">
+      <div>
+        <div class="next-label">Next project</div>
+        <a class="next-project" href="one-click-automation.html">One-Click Automation Setup →</a>
+      </div>
+      <a href="index.html#work">All work</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One-Click Automation Setup | Poppy Seisaki</title>
+<script>
+(function () {
+  var stored = localStorage.getItem('theme');
+  var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="nav-aurora"></div>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <button class="theme-toggle" aria-label="Toggle dark mode"><span class="knob"><span class="icon icon-sun">&#9728;</span><span class="icon icon-moon">&#9789;</span></span></button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="cs-header">
+    <span class="tag tag-ongoing reveal">Ongoing · CISA shipped iOS-only, LISA/Phase 2 pending</span>
+    <h1 class="reveal">One-Click Automation Setup</h1>
+
+    <div class="meta-strip reveal">
+      <div class="meta-item">
+        <div class="label">Role</div>
+        <div class="value">Product Designer, sole designer on this project</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Team</div>
+        <div class="value">1 PM, 1 lead engineer, 1 data analyst, 2 frontend, 2 backend (AI squad)</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Timeframe</div>
+        <div class="value">1 sprint, ongoing</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="lite-section reveal">
+    <div class="step-num">01. Problem</div>
+    <p>Automation and Splitter already existed, but weren't connected to the moment of intent. 65% of CISA users had zero automation set up, despite showing clear savings intent.</p>
+  </section>
+
+  <section class="lite-section reveal">
+    <div class="step-num">02. The fix</div>
+    <p>A one-tap flow: pre-filled amount based on CISA balance, Splitter pre-pointed at CISA, single confirm.</p>
+    <div class="img-placeholder tall">The actual one-tap confirm screen</div>
+  </section>
+
+  <section class="lite-section reveal">
+    <div class="step-num">03. Results</div>
+    <div class="results-grid">
+      <div class="result-item">Automation adoption grew from <strong>6% to 12.69%</strong> in 2 weeks (iOS only, clean control group).</div>
+      <div class="result-item">New onboarding cohort automation and splitter activation rose from <strong>4.3% to 21.8%</strong>.</div>
+      <div class="result-item">Transfer-in conversion hit <strong>48.3% vs. 22.9%</strong> for onboarding: higher intent, higher conversion.</div>
+    </div>
+  </section>
+
+  <section class="lite-section reveal">
+    <div class="step-num">04. What's next</div>
+    <p>Android rollout, transfer-in flow prioritization, LISA/Phase 2 pending.</p>
+  </section>
+
+</div>
+
+<footer class="cs-footer">
+  <div class="wrap">
+    <div class="cs-footer-inner reveal">
+      <div>
+        <div class="next-label">Back to</div>
+        <a class="next-project" href="index.html#work">All work →</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
