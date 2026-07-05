@@ -876,58 +876,47 @@ img {
 }
 
 /* ---------- Case study hero image ----------
-   No overlap on first paint. The image scrolls with the page, then sticks
-   near the top of the viewport for a while so the header text underneath
-   catches up and overlaps its base, then releases once .cs-hero-wrap ends. */
+   Scrolls normally with the page (no sticky, no overlap with the header
+   text below it), shifted right within the content column. */
 
 .cs-hero-wrap {
-  position: relative;
-  height: 95vh;
-  min-height: 620px;
-  max-height: 780px;
+  padding: 130px 0 40px;
 }
 
 .cs-hero {
-  position: sticky;
-  top: 100px;
   max-width: var(--max-w-wide);
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
   justify-content: flex-end;
-  pointer-events: none;
 }
 
 .cs-hero-img {
-  width: min(420px, 46vw);
+  width: min(840px, 60vw);
   height: auto;
-  animation: heroFloat 7s ease-in-out infinite;
+  animation: heroFloat 9s ease-in-out infinite;
 }
 
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-3px); }
 }
 
 .cs-header.cs-header-overlap {
-  position: relative;
-  padding-top: 40px;
+  padding-top: 24px;
 }
 
 @media (max-width: 640px) {
   .cs-hero-wrap {
-    height: 78vh;
-    min-height: 460px;
-    max-height: 560px;
+    padding: 110px 0 24px;
   }
 
   .cs-hero {
-    top: 84px;
     justify-content: center;
   }
 
   .cs-hero-img {
-    width: min(280px, 62vw);
+    width: min(360px, 78vw);
   }
 }
 
