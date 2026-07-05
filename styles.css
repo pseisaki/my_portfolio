@@ -875,6 +875,44 @@ img {
   margin-bottom: 64px;
 }
 
+/* ---------- Case study hero image (floats above the header, text overlaps its base) ---------- */
+
+.cs-hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 130px;
+  margin-bottom: -90px;
+  pointer-events: none;
+}
+
+.cs-hero-img {
+  width: min(640px, 86vw);
+  height: auto;
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.cs-header.cs-header-overlap {
+  position: relative;
+  padding-top: 24px;
+}
+
+@media (max-width: 640px) {
+  .cs-hero {
+    padding-top: 110px;
+    margin-bottom: -50px;
+  }
+
+  .cs-hero-img {
+    width: min(320px, 78vw);
+  }
+}
+
 .cs-header .tag {
   margin-bottom: 22px;
 }
@@ -982,7 +1020,7 @@ ol.plain li {
 }
 
 .problem-list li {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .problem-list li strong {
@@ -1027,7 +1065,7 @@ ol.plain li {
    Reference: iPhone 16 Pro logical screen is 402 x 874pt, Dynamic Island
    is 126 x 37.33pt sitting ~11pt from the top edge. */
 .phone-mockup {
-  --phone-w: clamp(200px, 26vw, 280px);
+  --phone-w: clamp(170px, 21vw, 230px);
   position: relative;
   width: var(--phone-w);
   aspect-ratio: 402 / 874;
