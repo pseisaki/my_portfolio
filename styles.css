@@ -728,6 +728,12 @@ img {
   background: var(--tag-ongoing-bg);
 }
 
+/* 7-item variant (Wealth Advisor): 4 columns on mobile keeps it to 2 rows */
+.side-nav-wide {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 400px;
+}
+
 /* Tablet: single row, still floating at the bottom */
 @media (min-width: 768px) and (max-width: 1319px) {
   .side-nav {
@@ -785,6 +791,129 @@ img {
   color: var(--text);
   font-size: 1.12rem;
   font-weight: 500;
+  margin: 0;
+}
+
+/* ---------- Strategy goals (primary / secondary) ---------- */
+
+.strategy-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.strategy-grid .goal-card {
+  flex: 1 1 320px;
+}
+
+.goal-card .goal-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+/* ---------- Insight items ---------- */
+
+.insight-item {
+  display: flex;
+  gap: 22px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-radius: var(--r-lg);
+  padding: 30px 32px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .3s ease;
+}
+
+.insight-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.insight-item .insight-num {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: var(--accent-1);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 44px;
+}
+
+.insight-item .insight-body h3 {
+  margin-bottom: 12px;
+}
+
+.insight-item .insight-body p:last-child {
+  margin-bottom: 0;
+}
+
+.insight-source {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-faint);
+  background: var(--placeholder-bg);
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .insight-item {
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 22px;
+  }
+}
+
+/* ---------- Takeaway cards ---------- */
+
+.takeaway-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.takeaway-card {
+  flex: 1 1 260px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-radius: var(--r-lg);
+  padding: 30px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.takeaway-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.takeaway-card .takeaway-icon {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--accent-1);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.takeaway-card h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.takeaway-card p {
+  font-size: 0.9rem;
+  color: var(--text-soft);
   margin: 0;
 }
 
