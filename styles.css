@@ -444,7 +444,7 @@ img {
 }
 
 .project-card .card-body {
-  flex: 1 1 28%;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -485,9 +485,9 @@ img {
 }
 
 .project-card .card-thumb {
-  flex: 1 1 70%;
-  min-width: 0;
-  max-height: 560px;
+  flex: 0 0 645px;
+  width: 645px;
+  height: 475px;
   border-radius: var(--r-md);
   background: var(--placeholder-bg);
   display: flex;
@@ -499,8 +499,7 @@ img {
 
 .project-card .card-thumb img {
   width: 100%;
-  height: auto;
-  max-height: 528px;
+  height: 100%;
   object-fit: contain;
   display: block;
 }
@@ -512,7 +511,9 @@ img {
   }
 
   .project-card .card-thumb {
+    flex: 0 0 auto;
     width: 100%;
+    height: 320px;
   }
 }
 
