@@ -1150,33 +1150,30 @@ ol.plain li {
   color: var(--accent-1);
 }
 
-/* Text-first variant: plain list, numbers carry the emphasis instead of a card */
-ul.results-list strong {
-  font-weight: 700;
-  color: var(--accent-1);
+/* The payoff of the case study: deliberately bigger, warmer cards than
+   the other containers on the page (img-placeholder, takeaway-card, etc.),
+   one per metric, stacked. */
+.impact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 8px 0 24px;
 }
 
-/* The payoff of the case study: a deliberately bigger, warmer card than
-   the other containers on the page (img-placeholder, takeaway-card, etc.) */
 .impact-card {
   background: linear-gradient(135deg, rgba(108, 75, 255, 0.14), rgba(255, 92, 168, 0.08));
   border: 1px solid rgba(108, 75, 255, 0.28);
   border-radius: var(--r-lg);
-  padding: 36px 40px;
-  margin: 8px 0 24px;
+  padding: 24px 28px;
   box-shadow: var(--shadow-lg);
-}
-
-.impact-card .results-list {
-  margin: 0;
-}
-
-.impact-card .results-list li {
   font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text);
 }
 
-.impact-card .results-list li:last-child {
-  margin-bottom: 0;
+.impact-card strong {
+  font-weight: 700;
+  color: var(--accent-1);
 }
 
 .honest-miss {
