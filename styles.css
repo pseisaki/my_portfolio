@@ -1240,31 +1240,6 @@ ol.plain li {
   margin: 0 auto;
 }
 
-/* Decision 3: image + phone-mockup side by side, sized a little smaller
-   so the pair sits comfortably next to the text column. */
-.decision-media-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  flex: 1 1 auto;
-}
-
-.decision-media-group .decision-img {
-  height: 162px;
-}
-
-.decision-media-group .phone-mockup.decision-phone {
-  --phone-w: 161px;
-}
-
-@media (min-width: 768px) {
-  .decision-item:has(.decision-media-group) .decision-item-text {
-    flex: 1 1 34%;
-  }
-}
-
 @media (min-width: 768px) {
   .decision-item {
     flex-direction: row;
