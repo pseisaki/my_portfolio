@@ -45,7 +45,7 @@
   </div>
 </div>
 
-<div class="wrap-wide">
+<div class="wrap-wide wealth-advisor-page">
 
   <header class="cs-header cs-header-overlap">
     <span class="tag tag-ongoing reveal">Ongoing · Release 1.1 shipped, iterating for Q3 2026</span>
@@ -125,7 +125,7 @@
 
   <section class="section reveal" id="decisions">
     <h2>Design decisions</h2>
-    <p>Six changes: get people to the advisor, respect their time, give them a plan they can compare and edit, make the next step obvious.</p>
+    <p>Five changes: get people to the advisor, respect their time, give them a plan they can compare and edit, make the next step obvious.</p>
 
     <div class="divider-list">
       <div class="decision-item">
@@ -134,52 +134,52 @@
           <h3>Add "Start a Plan" to the homepage's suggested next actions</h3>
           <p><strong>Why:</strong> 85% never opened the advisor, it had no home beyond a buried nav spot. Now it's a suggested next action on the homepage.</p>
         </div>
-        <div class="img-placeholder">Homepage, "Start a Plan" inside suggested next actions</div>
+        <img class="decision-img" src="images/decision-1-start-a-plan.webp" alt="Homepage with the new 'Start a Plan' suggested action">
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 2</div>
-          <h3>Open the advisor into 4 goal cards, instead of a blank chat</h3>
-          <p><strong>Why:</strong> people abandoned at open-ended questions; generic templates felt impersonal. Now it opens with the 4 goals people ask for most.</p>
+          <h3>Replace the open conversation with a 3-question modal</h3>
+          <p><strong>Why:</strong> too many, repeated, unclear questions caused drop-off. Now capped at 3: multiple choice, type-your-own option, no sensitive data upfront.</p>
         </div>
-        <div class="img-placeholder">Advisor opening screen: 4 goal cards</div>
+        <div class="phone-mockup decision-phone">
+          <div class="phone-mockup-island"></div>
+          <video class="phone-mockup-screen" src="videos/modal.mp4" autoplay loop muted playsinline></video>
+        </div>
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 3</div>
-          <h3>Replace the open conversation with a 3-question modal</h3>
-          <p><strong>Why:</strong> too many, repeated, unclear questions caused drop-off. Now capped at 3: multiple choice, type-your-own option, no sensitive data upfront.</p>
+          <h3>Generate 3 plan options instead of 1, then open an editable detail screen</h3>
+          <p><strong>Why:</strong> a single automatic plan felt generic and out of people's control. Now AI generates a plan in seconds, slow, balanced, or fast-track, but control stays with the user: every option opens into a plan they can edit directly, not one they're locked into.</p>
         </div>
-        <div class="img-placeholder">3-question modal flow, multiple choice plus type your own</div>
+        <div class="decision-media-group">
+          <img class="decision-img" src="images/suggestions.webp" alt="Slow, balanced, and fast-track plan suggestions">
+          <div class="phone-mockup decision-phone">
+            <div class="phone-mockup-island"></div>
+            <video class="phone-mockup-screen" src="videos/artefact.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 4</div>
-          <h3>Generate 3 plan options instead of 1, then open an editable detail screen</h3>
-          <p><strong>Why:</strong> a single automatic plan felt generic. Now it generates slow, balanced, and fast-track options, each fully editable.</p>
+          <h3>Add live progress tracking to saved plans</h3>
+          <p><strong>Why:</strong> a saved plan on its own doesn't tell you if you're still on track. Now each one shows its status at a glance, on track or behind schedule, and surfaces a concrete next step when it slips. Reassurance becomes ongoing, not a one-time confirmation.</p>
         </div>
-        <div class="img-placeholder">Slow / balanced / fast-track suggestions, then editable plan detail</div>
+        <img class="decision-img" src="images/tracking.webp" alt="Saved plan detail showing on-track status and suggested action when behind schedule">
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 5</div>
-          <h3>Add live progress tracking to saved plans</h3>
-          <p><strong>Why:</strong> a saved plan on its own doesn't tell you if you're still on track. Now each one shows its status at a glance, on track or behind schedule, and surfaces a concrete next step when it slips. Reassurance becomes ongoing, not a one-time confirmation.</p>
-        </div>
-        <div class="img-placeholder">Saved plan detail: on-track status, suggested action when behind schedule</div>
-      </div>
-
-      <div class="decision-item">
-        <div class="decision-item-text">
-          <div class="decision-index">Decision 6</div>
           <h3>Run a CRM campaign to people who'd never opened the advisor</h3>
           <p><strong>Why:</strong> no in-product fix reaches people who never see the feature. A targeted campaign drove +140% planning sessions vs. control, 85% first-time openers.</p>
         </div>
-        <div class="img-placeholder">CRM campaign creative (email / push)</div>
+        <img class="decision-img" src="images/crm.webp" alt="CRM campaign creative: Plan with Plum">
       </div>
     </div>
   </section>
