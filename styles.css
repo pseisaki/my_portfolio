@@ -994,6 +994,72 @@ ol.plain li {
   font-weight: 700;
 }
 
+/* ---------- Problem layout: text left, phone mockup right ---------- */
+
+.problem-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+@media (min-width: 768px) {
+  .problem-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  .problem-text {
+    flex: 1 1 55%;
+    min-width: 0;
+  }
+
+  .problem-layout .phone-mockup {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+}
+
+/* ---------- Phone mockup (iPhone 16 Pro style frame) ---------- */
+
+/* Proportions below are calc()'d off --phone-w (not %) so corner radii stay
+   circular instead of stretching into ellipses on a tall rectangle.
+   Reference: iPhone 16 Pro logical screen is 402 x 874pt, Dynamic Island
+   is 126 x 37.33pt sitting ~11pt from the top edge. */
+.phone-mockup {
+  --phone-w: clamp(200px, 26vw, 280px);
+  position: relative;
+  width: var(--phone-w);
+  aspect-ratio: 402 / 874;
+  margin: 0 auto;
+  background: #0b0b0e;
+  border-radius: calc(var(--phone-w) * 0.14);
+  padding: calc(var(--phone-w) * 0.02);
+  box-shadow: var(--shadow-lg), inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.phone-mockup-screen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(var(--phone-w) * 0.12);
+  display: block;
+  background: #000;
+}
+
+.phone-mockup-island {
+  position: absolute;
+  top: calc(var(--phone-w) * 0.027);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--phone-w) * 0.313);
+  height: calc(var(--phone-w) * 0.093);
+  background: #000;
+  border-radius: var(--r-pill);
+  z-index: 2;
+}
+
 /* ---------- Pull quote (customer comments) ---------- */
 
 .pull-quote {
