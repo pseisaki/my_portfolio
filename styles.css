@@ -560,12 +560,8 @@ img {
 
 .testimonial-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 26px;
-}
-
-.testimonial-grid .testimonial-card {
-  flex: 1 1 280px;
 }
 
 .testimonial-card {
@@ -1044,9 +1040,6 @@ ul.plain li {
   .about-grid .about-avatar {
     max-width: 220px;
     margin: 0 auto;
-  }
-  .testimonial-grid {
-    flex-direction: column;
   }
   .hero-greeting {
     font-size: clamp(2.6rem, 9vw, 4.2rem);
