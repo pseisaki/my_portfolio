@@ -467,10 +467,22 @@ img {
   white-space: nowrap;
 }
 
+.project-card .card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.project-card .project-year {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-faint);
+}
+
 .project-card .card-thumb {
-  flex: 1 1 42%;
+  flex: 1 1 48%;
   min-width: 0;
-  height: 220px;
+  height: 440px;
   border-radius: var(--r-md);
   background: var(--placeholder-bg);
   display: flex;
