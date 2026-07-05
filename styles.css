@@ -923,11 +923,11 @@ img {
 }
 
 .headline-stat {
-  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-  font-weight: 700;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 600;
   color: var(--text);
-  line-height: 1.35;
-  margin: 8px 0 26px;
+  line-height: 1.4;
+  margin: 4px 0 22px;
 }
 
 .headline-stat .num {
@@ -993,6 +993,45 @@ ul.plain li {
   text-transform: uppercase;
   color: var(--text-faint);
   margin-bottom: 12px;
+}
+
+/* Text-first variant (Wealth Advisor): text left, image right on wider screens */
+.decision-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.decision-item .img-placeholder {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .decision-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .decision-item-text {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+
+  .decision-item-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .decision-item .img-placeholder {
+    flex: 1 1 50%;
+    min-width: 0;
+    height: 100%;
+    min-height: 200px;
+  }
+
+  .decision-item .img-placeholder.tall {
+    min-height: 260px;
+  }
 }
 
 .decision .why {

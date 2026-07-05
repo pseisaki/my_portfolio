@@ -63,99 +63,111 @@
 
   <section class="section reveal" id="overview">
     <h2>Overview</h2>
-    <p>Plum's chat assistant already helps people save and invest. AI Wealth Plans turns that into a real plan: a goal, a monthly deposit, where the money goes, and a projection of where it leads, built in minutes instead of a form or a paid advisor.</p>
+    <p>AI Wealth Plans turns Plum's chat assistant into a real financial plan, a goal, a monthly deposit, and a projection, built in minutes instead of a form or a paid advisor.</p>
   </section>
 
   <section class="section reveal" id="problem">
     <h2>The problem</h2>
     <div class="headline-stat"><span class="num">85%</span> of eligible users never opened the advisor</div>
-    <p>Two gaps stacked on top of each other: most users never found the advisor, and of those who did, 9 in 10 never saw a finished plan.</p>
+    <p>Two gaps: most users never found the advisor. Of those who did, 9 in 10 never finished a plan.</p>
     <ul class="plain">
-      <li>Retirement questions asked for sensitive info too early, before trust was earned</li>
-      <li>Investment questions deflected to "emergency fund" instead of answering what was asked</li>
-      <li>General saving never asked "saving for what," so plans felt generic</li>
-      <li>Plans showed up as unreadable chat text, not something you could find again</li>
+      <li>Retirement flow asked for sensitive info too early</li>
+      <li>Investment questions deflected to "emergency fund"</li>
+      <li>General saving never asked what for, so plans felt generic</li>
+      <li>Plans buried in unreadable chat text</li>
     </ul>
-    <p>Plan creation is where advice turns into action. A user who fails to create a plan leaves with nothing to show for it, which means fewer activations, fewer deposits, and weaker habits down the line.</p>
+    <p>Plan creation turns advice into action. Without it: fewer activations, fewer deposits, weaker habits.</p>
   </section>
 
   <section class="section reveal" id="strategy">
-    <h2>Strategy</h2>
-    <p><strong>Primary goal.</strong> Turn plan creation into a way in for people who feel shut out of financial advice. Our own research shows people often rule themselves out of advice altogether, assuming it's only for those with more money. A free, trustworthy plan inside an app people already use is one of the most direct ways to reach them.</p>
-    <p><strong>Secondary goal.</strong> Move plan save rate from a ~12% baseline toward a 30% target. Fix visibility so plans stop disappearing into chat text.</p>
+    <h2>Goals</h2>
+    <p><strong>Primary goal.</strong> Make plan creation a way in for people who feel shut out of financial advice, many assume it's only for people with more money. A free, trustworthy plan inside an app they already use reaches them directly.</p>
+    <p><strong>Secondary goal.</strong> Move plan save rate from ~12% to a 30% target. Make plans visible, not buried in chat.</p>
   </section>
 
   <section class="section reveal" id="insights">
-    <h2>Insights</h2>
+    <h2>Research insights</h2>
 
     <div class="divider-list">
       <div class="insight-item">
         <div class="insight-num">01</div>
         <h3>Users abandon before a plan is even generated</h3>
-        <p>In session reviews, people dropped off before a plan even appeared. Too many questions up front, confusing or repeated ones, information overload, wrong recommendations, or the assistant simply misreading what someone wanted, any one of these was enough to end the flow with nothing to show for it.</p>
+        <p>People dropped off before a plan even appeared: too many questions, confusing wording, wrong recommendations. Any one was enough to end the flow.</p>
         <span class="insight-source">Source: internal plan creation evaluations, qualitative review</span>
       </div>
 
       <div class="insight-item">
         <div class="insight-num">02</div>
         <h3>People will use an AI plan, but only if they can still touch it</h3>
-        <p>We tested two early designs with 10 people: one built the plan automatically, the other let people edit every field. The automatic version was faster to start, but felt generic and out of their hands. The editable version won almost everyone over, not because it looked less like AI, but because people could control their deposit, target date, and allocation. Editable deposits and target date were non-negotiable, full stop.</p>
+        <p>Tested automatic vs. editable plans with 10 people. Automatic felt generic and out of their hands. Editable won, control over deposit and target date mattered most.</p>
         <span class="insight-source">Source: Wealth Plans concept test, December 2025, n=10</span>
       </div>
 
       <div class="insight-item">
         <div class="insight-num">03</div>
         <h3>Advice is undersold to the people who need it most</h3>
-        <p>A wider survey and interviews on financial advice kept surfacing the same want: reassurance, not bigger returns. People want to stop worrying about money, not optimize it. Many rule themselves out of advice altogether, assuming it's only for people with more money. Even people who'd used and left an advisor said the same thing: they'd pay for a one-off check-in, not a subscription.</p>
+        <p>People want reassurance, not bigger returns. Many rule themselves out, assuming advice is only for people with more money. Even past advisor clients wanted a one-off check-in, not a subscription.</p>
         <span class="insight-source">Source: Financial Advisor Study, May 2026, n=345 survey plus 8 interviews</span>
       </div>
     </div>
   </section>
 
   <section class="section reveal" id="decisions">
-    <h2>Decisions</h2>
-    <p>Six changes, built directly from the insights above: get people to the advisor, respect their time once they're in, give them a plan they can compare and edit, and make it obvious what to do next.</p>
+    <h2>Design decisions</h2>
+    <p>Six changes: get people to the advisor, respect their time, give them a plan they can compare and edit, make the next step obvious.</p>
 
     <div class="divider-list">
       <div class="decision-item">
-        <div class="decision-index">Decision 1</div>
-        <h3>Add "Start a Plan" to the homepage's suggested next actions</h3>
-        <p><strong>Why:</strong> 85% of people never opened the advisor. Part of that is simple, it had no home besides a buried spot in the bottom nav. Now it's a suggested next action right on the homepage.</p>
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 1</div>
+          <h3>Add "Start a Plan" to the homepage's suggested next actions</h3>
+          <p><strong>Why:</strong> 85% never opened the advisor, it had no home beyond a buried nav spot. Now it's a suggested next action on the homepage.</p>
+        </div>
         <div class="img-placeholder">Homepage, "Start a Plan" inside suggested next actions</div>
       </div>
 
       <div class="decision-item">
-        <div class="decision-index">Decision 2</div>
-        <h3>Open the advisor into 4 goal cards, instead of a blank chat</h3>
-        <p><strong>Why:</strong> session reviews showed people abandoning at open-ended, unclear questions right at the start. Our concept test also found generic goal templates feel impersonal. So instead of a blank chat or a generic list, the advisor opens with the 4 goals people ask for most.</p>
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 2</div>
+          <h3>Open the advisor into 4 goal cards, instead of a blank chat</h3>
+          <p><strong>Why:</strong> people abandoned at open-ended questions; generic templates felt impersonal. Now it opens with the 4 goals people ask for most.</p>
+        </div>
         <div class="img-placeholder">Advisor opening screen: 4 goal cards</div>
       </div>
 
       <div class="decision-item">
-        <div class="decision-index">Decision 3</div>
-        <h3>Replace the open conversation with a 3-question modal</h3>
-        <p><strong>Why:</strong> people were dropping off over too many, repeated, or unclear questions, and our concept test showed how much trust depends on feeling in control from the start. Now it's capped at 3 questions, no sensitive data, multiple choice with the option to type your own, ranges instead of blank fields.</p>
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 3</div>
+          <h3>Replace the open conversation with a 3-question modal</h3>
+          <p><strong>Why:</strong> too many, repeated, unclear questions caused drop-off. Now capped at 3: multiple choice, type-your-own option, no sensitive data upfront.</p>
+        </div>
         <div class="img-placeholder">3-question modal flow, multiple choice plus type your own</div>
       </div>
 
       <div class="decision-item">
-        <div class="decision-index">Decision 4</div>
-        <h3>Generate 3 plan options instead of 1, then open an editable detail screen</h3>
-        <p><strong>Why:</strong> our concept test showed a single automatic plan felt generic and out of people's control, while an editable version won almost everyone over. Now it generates a slow, balanced, and fast-track option, and tapping one opens a full plan you can edit directly.</p>
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 4</div>
+          <h3>Generate 3 plan options instead of 1, then open an editable detail screen</h3>
+          <p><strong>Why:</strong> a single automatic plan felt generic. Now it generates slow, balanced, and fast-track options, each fully editable.</p>
+        </div>
         <div class="img-placeholder">Slow / balanced / fast-track suggestions, then editable plan detail</div>
       </div>
 
       <div class="decision-item">
-        <div class="decision-index">Decision 5</div>
-        <h3>Turn "Save plan" into "Continue with setup," with a saved-plan artefact, progress tracking, and info icons</h3>
-        <p><strong>Why:</strong> our usability test showed people wanted reassurance and control right at the point of committing. So "Save plan" became "Continue with setup," saved plans get their own home with the next action front and centre, progress tracking so it doesn't disappear, and info icons explaining the deposit split and the projection.</p>
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 5</div>
+          <h3>Turn "Save plan" into "Continue with setup"</h3>
+          <p><strong>Why:</strong> people wanted reassurance at the point of committing. Saved plans now get their own home, with progress tracking and info icons explaining the numbers.</p>
+        </div>
         <div class="img-placeholder">Saved plan artefact: next action, progress tracking, info icons</div>
       </div>
 
       <div class="decision-item">
-        <div class="decision-index">Decision 6</div>
-        <h3>Run a CRM campaign to people who'd never opened the advisor</h3>
-        <p><strong>Why:</strong> no in-product fix solves a gap that starts before someone sees the feature. An email and push campaign to that exact group drove a 140% lift in planning sessions versus a control group, and 85% of them were opening the advisor for the first time.</p>
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 6</div>
+          <h3>Run a CRM campaign to people who'd never opened the advisor</h3>
+          <p><strong>Why:</strong> no in-product fix reaches people who never see the feature. A targeted campaign drove +140% planning sessions vs. control, 85% first-time openers.</p>
+        </div>
         <div class="img-placeholder">CRM campaign creative (email / push)</div>
       </div>
     </div>
@@ -164,14 +176,14 @@
   <section class="section reveal" id="impact">
     <h2>Impact</h2>
     <ul class="plain results-list">
-      <li>Sessions nearly doubled week-on-week post-launch: <strong>3,343 to 11,942</strong>.</li>
+      <li>Sessions nearly doubled post-launch: <strong>3,343 to 11,942</strong>.</li>
       <li>Plan save rate climbed from a <strong>12% baseline to a 15.2% peak</strong>.</li>
-      <li>Plan Viewed to Saved conversion improved from about <strong>48% to 54.4%</strong>.</li>
+      <li>Plan Viewed → Saved conversion: <strong>48% to 54.4%</strong>.</li>
       <li>CRM campaign drove <strong>+140% more planning sessions</strong> vs. control, with 85% first-time planners.</li>
     </ul>
 
     <div class="callout callout-miss">
-      <strong>Honest miss:</strong> overall adoption is still small, only a few thousand users have a wealth plan today. There's also a measurement problem: funded plans are higher than saved plans. Some people skip saving the plan but still complete the tasks it recommends within 7 days. Plan save rate, the number we've been chasing, may be undercounting how well this actually works.
+      <strong>Honest miss:</strong> adoption is still small, only a few thousand users have a plan. Funded plans outpace saved ones, some skip saving but still complete tasks within 7 days. Plan save rate may be undercounting real impact.
     </div>
   </section>
 
@@ -181,17 +193,17 @@
       <div class="takeaway-item">
         <span class="takeaway-icon">⚙</span>
         <h3>Bring engineers in earlier</h3>
-        <p>There was a real gap between the vision and what we could build, and we only found out how big partway through. <strong>What I'd do differently:</strong> bring engineers in to see the concept before it's final, not after.</p>
+        <p>There was a real gap between vision and what we could build. <strong>What I'd do differently:</strong> bring engineers in before the concept is final.</p>
       </div>
       <div class="takeaway-item">
         <span class="takeaway-icon">◎</span>
         <h3>Question the format, not just the flow</h3>
-        <p>I designed around the assumption that people want a goal-first plan. <strong>What I'd do differently:</strong> test whether broader financial advice and coaching is what they actually want before building the rest around it.</p>
+        <p>I assumed people want a goal-first plan. <strong>What I'd do differently:</strong> test whether broader coaching is what they actually want, first.</p>
       </div>
       <div class="takeaway-item">
         <span class="takeaway-icon">⧉</span>
         <h3>Sequence releases, don't bundle them</h3>
-        <p>We wanted to ship too many things at once, which made it impossible to track the impact of any single decision. <strong>What I'd do differently:</strong> push the team to prioritise and stagger releases from the start.</p>
+        <p>We shipped too many things at once, impossible to isolate impact. <strong>What I'd do differently:</strong> stagger releases from the start.</p>
       </div>
     </div>
   </section>
