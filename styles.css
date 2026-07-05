@@ -914,7 +914,21 @@ img {
 .takeaway-card p {
   font-size: 0.9rem;
   color: var(--text-soft);
-  margin: 0;
+  margin: 0 0 14px;
+}
+
+.takeaway-card p:last-child {
+  margin-bottom: 0;
+}
+
+.takeaway-card .takeaway-different {
+  background: var(--placeholder-bg);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+}
+
+.takeaway-card .takeaway-different strong {
+  color: var(--text);
 }
 
 /* ---------- Case study header ---------- */
