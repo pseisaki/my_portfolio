@@ -794,141 +794,43 @@ img {
   margin: 0;
 }
 
-/* ---------- Strategy goals (primary / secondary) ---------- */
+/* ---------- Divider list (text-first repeated items) ---------- */
+/* Shared by Insights, Decisions, and Takeaways on the case study pages:
+   plain text by default, a thin rule replaces card backgrounds. */
 
-.strategy-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.strategy-grid .goal-card {
-  flex: 1 1 320px;
-}
-
-.goal-card .goal-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--text-faint);
-  margin-bottom: 10px;
+.divider-list > * + * {
+  border-top: 1px solid var(--divider);
+  padding-top: 28px;
+  margin-top: 28px;
 }
 
 /* ---------- Insight items ---------- */
 
-.insight-item {
-  display: flex;
-  gap: 22px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-radius: var(--r-lg);
-  padding: 30px 32px;
-  margin-bottom: 22px;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow .3s ease;
-}
-
-.insight-item:hover {
-  box-shadow: var(--shadow-md);
-}
-
 .insight-item .insight-num {
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  font-weight: 400;
-  color: var(--accent-1);
-  line-height: 1;
-  flex-shrink: 0;
-  min-width: 44px;
-}
-
-.insight-item .insight-body h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
   margin-bottom: 12px;
 }
 
-.insight-item .insight-body p:last-child {
-  margin-bottom: 0;
-}
-
 .insight-source {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  display: block;
+  font-size: 0.82rem;
+  font-style: italic;
   color: var(--text-faint);
-  background: var(--placeholder-bg);
-  padding: 5px 12px;
-  border-radius: var(--r-pill);
-  margin-top: 14px;
+  margin-top: 4px;
 }
 
-@media (max-width: 640px) {
-  .insight-item {
-    flex-direction: column;
-    gap: 8px;
-    padding: 24px 22px;
-  }
-}
+/* ---------- Takeaway items ---------- */
 
-/* ---------- Takeaway cards ---------- */
-
-.takeaway-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.takeaway-card {
-  flex: 1 1 260px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-radius: var(--r-lg);
-  padding: 30px 28px;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow .3s ease, transform .3s ease;
-}
-
-.takeaway-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
-.takeaway-card .takeaway-icon {
+.takeaway-item .takeaway-icon {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--accent-1);
   display: block;
-  margin-bottom: 18px;
-}
-
-.takeaway-card h3 {
-  font-size: 1.02rem;
-  font-weight: 700;
-  margin: 0 0 8px;
-  color: var(--text);
-}
-
-.takeaway-card p {
-  font-size: 0.9rem;
-  color: var(--text-soft);
-  margin: 0 0 14px;
-}
-
-.takeaway-card p:last-child {
-  margin-bottom: 0;
-}
-
-.takeaway-card .takeaway-different {
-  background: var(--placeholder-bg);
-  border-radius: var(--r-sm);
-  padding: 14px 16px;
-}
-
-.takeaway-card .takeaway-different strong {
-  color: var(--text);
+  margin-bottom: 12px;
 }
 
 /* ---------- Case study header ---------- */
@@ -992,16 +894,6 @@ img {
   color: var(--text);
   font-weight: 500;
   line-height: 1.45;
-}
-
-.status-flag {
-  background: var(--glass-bg);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border-radius: var(--r-md);
-  padding: 18px 22px;
-  font-size: 0.92rem;
-  color: var(--text-soft);
 }
 
 /* ---------- Section blocks ---------- */
@@ -1094,7 +986,7 @@ ul.plain li {
   box-shadow: var(--shadow-md);
 }
 
-.decision .decision-index {
+.decision-index {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -1165,6 +1057,12 @@ ul.plain li {
 }
 
 .result-item strong {
+  font-weight: 700;
+  color: var(--accent-1);
+}
+
+/* Text-first variant: plain list, numbers carry the emphasis instead of a card */
+ul.results-list strong {
   font-weight: 700;
   color: var(--accent-1);
 }
