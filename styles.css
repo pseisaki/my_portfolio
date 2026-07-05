@@ -613,19 +613,6 @@ img {
   object-fit: cover;
 }
 
-.testimonial-avatar-group {
-  display: flex;
-  flex-shrink: 0;
-}
-
-.testimonial-avatar-group .testimonial-avatar {
-  border: 2px solid var(--bg);
-}
-
-.testimonial-avatar-group .testimonial-avatar + .testimonial-avatar {
-  margin-left: -14px;
-}
-
 .testimonial-name {
   font-size: 0.9rem;
   font-weight: 600;
