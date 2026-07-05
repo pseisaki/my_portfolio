@@ -1156,6 +1156,35 @@ ul.results-list strong {
   color: var(--accent-1);
 }
 
+/* The payoff of the case study: a deliberately bigger, warmer card than
+   the other containers on the page (img-placeholder, takeaway-card, etc.) */
+.impact-card {
+  background: linear-gradient(135deg, rgba(108, 75, 255, 0.14), rgba(255, 92, 168, 0.08));
+  border: 1px solid rgba(108, 75, 255, 0.28);
+  border-radius: var(--r-lg);
+  padding: 36px 40px;
+  margin: 8px 0 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.impact-card .results-list {
+  margin: 0;
+}
+
+.impact-card .results-list li {
+  font-size: 1.1rem;
+}
+
+.impact-card .results-list li:last-child {
+  margin-bottom: 0;
+}
+
+.honest-miss {
+  font-style: italic;
+  color: var(--text-soft);
+  font-weight: 400;
+}
+
 .callout {
   border-radius: var(--r-md);
   padding: 20px 24px;
