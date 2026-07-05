@@ -556,6 +556,65 @@ img {
   border-radius: var(--r-pill);
 }
 
+/* ---------- Questions / FAQ ---------- */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-radius: var(--r-lg);
+  padding: 0 28px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .35s ease;
+}
+
+.faq-item[open] {
+  box-shadow: var(--shadow-md);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-faint);
+  transition: transform .3s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  margin: 0 0 26px;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
 /* ---------- Testimonials ---------- */
 
 .testimonial-grid {
