@@ -1070,7 +1070,8 @@ img {
   }
 }
 
-.payday-hero.cs-hero-wrap .cs-hero {
+.payday-hero.cs-hero-wrap .cs-hero,
+.one-click-hero.cs-hero-wrap .cs-hero {
   justify-content: center;
 }
 
@@ -1078,9 +1079,17 @@ img {
   width: min(588px, 42vw);
 }
 
+.one-click-hero .cs-hero-img {
+  width: min(470px, 33.6vw);
+}
+
 @media (max-width: 640px) {
   .payday-hero .cs-hero-img {
     width: min(252px, 54.6vw);
+  }
+
+  .one-click-hero .cs-hero-img {
+    width: min(202px, 43.7vw);
   }
 }
 

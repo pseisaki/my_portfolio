@@ -13,7 +13,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,65 +29,188 @@
   </div>
 </nav>
 
-<div class="wrap">
+<aside class="side-nav side-nav-wide">
+  <a href="#overview">Overview</a>
+  <a href="#problem">Problem</a>
+  <a href="#strategy">Goals</a>
+  <a href="#insights">Insights</a>
+  <a href="#decisions">Decisions</a>
+  <a href="#impact">Impact</a>
+  <a href="#takeaways">Takeaways</a>
+  <button class="side-nav-current" type="button" aria-expanded="false">
+    <span class="side-nav-current-label">Overview</span>
+    <span class="side-nav-chevron">&#8963;</span>
+  </button>
+</aside>
 
-  <header class="cs-header">
-    <span class="tag tag-ongoing reveal">Ongoing · CISA shipped iOS-only, LISA/Phase 2 pending</span>
+<div class="cs-hero-wrap one-click-hero">
+  <div class="cs-hero">
+    <img class="cs-hero-img" src="images/one-click-automation-card.webp" alt="One-Click Automation Setup screens">
+  </div>
+</div>
+
+<div class="wrap-wide wealth-advisor-page">
+
+  <header class="cs-header cs-header-overlap">
+    <span class="tag tag-shipped reveal">Shipped</span>
     <h1 class="reveal">One-Click Automation Setup</h1>
 
     <div class="meta-strip reveal">
       <div class="meta-item">
         <div class="label">Role</div>
-        <div class="value">Product Designer, sole designer on this project</div>
+        <div class="value">Product Designer, end-to-end product ownership</div>
       </div>
       <div class="meta-item">
         <div class="label">Team</div>
-        <div class="value">1 PM, 1 lead engineer, 1 data analyst, 2 frontend, 2 backend (AI squad)</div>
+        <div class="value">1 PM, 1 data analyst, 2 frontend, 3 backend engineers</div>
       </div>
       <div class="meta-item">
         <div class="label">Timeframe</div>
-        <div class="value">1 sprint, ongoing</div>
+        <div class="value">2 sprints, shipped Q2 2026</div>
       </div>
     </div>
   </header>
 
-  <section class="lite-section reveal">
-    <div class="step-num">01. Problem</div>
-    <p>Automation and Splitter already existed, but weren't connected to the moment of intent. 65% of CISA users had zero automation set up, despite showing clear savings intent.</p>
+  <section class="section reveal" id="overview">
+    <h2>Overview</h2>
+    <p>Saving automations live in their own part inside app. Unless users went looking for them, they rarely discovered how powerful they could be.</p>
+    <p>One-click Automation Setup was a quick 1–2 sprint project across design and implementation. It introduced automations inside the products users were already opening.</p>
+    <p>We started with Cash ISA, recommending a saving rule, a suggested amount, and a Deposit Split in one step.</p>
+    <p>It was also a first step towards a broader activation pattern for LISA, Trading, and Easy Access.</p>
   </section>
 
-  <section class="lite-section reveal">
-    <div class="step-num">02. The fix</div>
-    <p>A one-tap flow: pre-filled amount based on CISA balance, Splitter pre-pointed at CISA, single confirm.</p>
-    <div class="img-placeholder tall">The actual one-tap confirm screen</div>
-  </section>
-
-  <section class="lite-section reveal">
-    <div class="step-num">03. Results</div>
-    <div class="results-grid">
-      <div class="result-item">Automation adoption grew from <strong>6% to 12.69%</strong> in 2 weeks (iOS only, clean control group).</div>
-      <div class="result-item">New onboarding cohort automation and splitter activation rose from <strong>4.3% to 21.8%</strong>.</div>
-      <div class="result-item">Transfer-in conversion hit <strong>48.3% vs. 22.9%</strong> for onboarding: higher intent, higher conversion.</div>
+  <section class="section reveal" id="problem">
+    <h2>The problem</h2>
+    <div class="problem-layout">
+      <div class="problem-text">
+        <h3>Users opened the product but never built the habit</h3>
+        <p>Automation and Deposit Split already existed, but they were introduced separately and too late in the journey.</p>
+        <p>Most users finished onboarding without automating their savings. Deposit Split appeared later as a passive feature, leaving a large gap between opening a Cash ISA and regularly funding it.</p>
+      </div>
+      <div class="img-placeholder">Problem screenshot</div>
     </div>
   </section>
 
-  <section class="lite-section reveal">
-    <div class="step-num">04. What's next</div>
-    <p>Android rollout, transfer-in flow prioritization, LISA/Phase 2 pending.</p>
+  <section class="section reveal" id="strategy">
+    <h2>Goals</h2>
+    <p>Increase automation adoption, Deposit Split adoption, and automated deposits among Cash ISA users.</p>
+    <p>Help users start saving with less effort while creating a reusable pattern for future products.</p>
+  </section>
+
+  <section class="section reveal" id="insights">
+    <h2>Research insights</h2>
+
+    <div class="divider-list">
+      <div class="insight-item">
+        <div class="insight-num">01</div>
+        <h3>Cash ISA had the biggest activation opportunity</h3>
+        <p>65% of Cash ISA users had no automation, and only 4.4% used Deposit Split.</p>
+        <p>The opportunity was not acquiring more users. It was activating the ones we already had.</p>
+        <span class="insight-source">Source: User base analysis, Looker dashboards, and customer segmentation.</span>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-num">02</div>
+        <h3>Intent predicted conversion</h3>
+        <p>Users opening or transferring into a Cash ISA held much higher balances and converted more often.</p>
+        <p>The best moment to ask was when users were already thinking about adding money.</p>
+        <span class="insight-source">Source: Launch dashboards and customer segmentation analysis.</span>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-num">03</div>
+        <h3>Timing influenced behaviour</h3>
+        <p>Competitor research showed that recurring deposits were introduced immediately after onboarding.</p>
+        <p>Our launch data later confirmed that high-intent entry points consistently converted better.</p>
+        <span class="insight-source">Source: Competitive research, launch dashboards, and conversion analysis.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="decisions">
+    <h2>Design decisions</h2>
+
+    <div class="divider-list">
+      <div class="decision-item">
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 1</div>
+          <h3>Position the prompt around user intent</h3>
+          <p><strong>Why:</strong> We believed automation should appear when users were already thinking about saving.</p>
+          <p>So we placed it inside Cash ISA onboarding and deposit flows, where intent was higher.</p>
+        </div>
+        <div class="img-placeholder">Decision screenshot</div>
+      </div>
+
+      <div class="decision-item">
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 2</div>
+          <h3>Turn setup into a recommendation</h3>
+          <p><strong>Why:</strong> We believed users should confirm a recommendation instead of configuring settings.</p>
+          <p>So we pre-filled the rule, amount, and Deposit Split to reduce decision effort.</p>
+        </div>
+        <div class="img-placeholder">Decision screenshot</div>
+      </div>
+
+      <div class="decision-item">
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 3</div>
+          <h3>Make the long-term value visible</h3>
+          <p><strong>Why:</strong> We believed users would commit more easily if the benefit felt tangible.</p>
+          <p>So we used a three-year projection to make the long-term value of recurring deposits tangible.</p>
+        </div>
+        <div class="img-placeholder">Decision screenshot</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="impact">
+    <h2>Impact</h2>
+    <div class="impact-list">
+      <div class="impact-card">Automation adoption doubled from around <strong>6% to 12.7%</strong>.</div>
+      <div class="impact-card"><strong>1,570 users</strong> completed the one-click setup.</div>
+      <div class="impact-card">Onboarding users reached <strong>21.8%</strong> with Automation and Deposit Split active.</div>
+      <div class="impact-card">Projected automated AUM increased by <strong>£3.6M per month</strong>.</div>
+    </div>
+
+    <p class="honest-miss">The honest miss: existing users responded much more slowly than new users.</p>
+  </section>
+
+  <section class="section reveal" id="takeaways">
+    <h2>Takeaways</h2>
+    <div class="takeaway-grid">
+      <div class="takeaway-card">
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg></span>
+        <h3>The moment mattered more than the feature</h3>
+        <p>Automation and Deposit Split already existed. The real improvement came from showing them when users were already thinking about saving.</p>
+        <p>Next time, I'd map more high-intent moments before designing the flow, from salary deposits to transfers and new goals.</p>
+      </div>
+      <div class="takeaway-card">
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.7 1.3c0 2-2.8 2.3-2.8 3.9"/><path d="M12 17.5v.01"/></svg></span>
+        <h3>Existing users needed a different strategy</h3>
+        <p>New users responded because the setup became part of opening a Cash ISA. Existing users were harder to move with a passive banner.</p>
+        <p>Next time, I'd design dedicated reactivation journeys that give existing users a clear reason to automate now.</p>
+      </div>
+    </div>
   </section>
 
 </div>
 
 <footer class="cs-footer">
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="cs-footer-inner reveal">
       <div>
-        <div class="next-label">Back to</div>
-        <a class="next-project" href="index.html#work">All work →</a>
+        <div class="next-label">Next project</div>
+        <a class="next-project" href="wealth-advisor.html">Plum's AI Wealth Advisor →</a>
       </div>
+      <a href="index.html#work">All work</a>
     </div>
   </div>
 </footer>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <div class="lightbox-stage"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
