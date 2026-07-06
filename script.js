@@ -24,71 +24,50 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Old/new comparison videos (e.g. Payday setup flow): both start together
-  // on tap, each with its own stopwatch, and neither loops or waits for the
-  // other, so the gap between finish times is the point. Once both have
-  // finished, the button becomes a restart control.
-  document.querySelectorAll('.decision-compare').forEach(function (compare) {
-    var videos = Array.prototype.slice.call(compare.querySelectorAll('video'));
-    var stopwatches = Array.prototype.slice.call(compare.querySelectorAll('.compare-stopwatch'));
-    var toggle = compare.querySelector('.compare-toggle');
-    if (!videos.length || !toggle) return;
-
-    var endedCount = 0;
-    var startTime = null;
-    var running = videos.map(function () { return false; });
-    var rafId = null;
+  // Old/new comparison videos (e.g. Payday setup flow): each clip has its
+  // own play button and stopwatch, and runs independently — no need to
+  // start them together now that the stopwatch is what tells the story.
+  document.querySelectorAll('.decision-compare-item').forEach(function (item) {
+    var video = item.querySelector('video');
+    var stopwatch = item.querySelector('.compare-stopwatch');
+    var toggle = item.querySelector('.compare-toggle');
+    if (!video || !toggle) return;
 
     // The "new" clip plays back a touch faster than real time, on top of
     // already being the shorter recording, so the speed-up reads clearly.
-    videos.forEach(function (video) {
-      if (video.currentSrc.indexOf('new') !== -1 || video.getAttribute('src').indexOf('new') !== -1) {
-        video.playbackRate = 1.5;
-      }
-    });
+    if (video.currentSrc.indexOf('new') !== -1 || video.getAttribute('src').indexOf('new') !== -1) {
+      video.playbackRate = 1.5;
+    }
 
     // The stopwatch tracks real elapsed time (wall clock), not the video's
     // own currentTime — currentTime always counts up to the file's fixed
     // duration regardless of playbackRate, which would hide the speed-up.
+    var startTime = null;
+    var rafId = null;
     var tick = function () {
       var elapsed = (performance.now() - startTime) / 1000;
-      running.forEach(function (isRunning, i) {
-        if (isRunning) stopwatches[i].textContent = elapsed.toFixed(1) + 's';
-      });
-      if (running.some(Boolean)) rafId = requestAnimationFrame(tick);
-    };
-
-    videos.forEach(function (video, i) {
-      video.addEventListener('ended', function () {
-        running[i] = false;
-        endedCount++;
-        if (endedCount === videos.length) {
-          if (rafId) cancelAnimationFrame(rafId);
-          toggle.classList.remove('is-hidden');
-          toggle.classList.add('is-ended');
-          toggle.setAttribute('aria-label', 'Restart comparison');
-        }
-      });
-    });
-
-    var playAll = function () {
-      if (rafId) cancelAnimationFrame(rafId);
-      endedCount = 0;
-      toggle.classList.remove('is-ended');
-      toggle.classList.add('is-hidden');
-      toggle.setAttribute('aria-label', 'Playing comparison');
-      videos.forEach(function (video, i) {
-        video.pause();
-        video.currentTime = 0;
-        running[i] = true;
-        stopwatches[i].textContent = '0.0s';
-      });
-      startTime = performance.now();
-      videos.forEach(function (video) { video.play().catch(function () {}); });
+      if (stopwatch) stopwatch.textContent = elapsed.toFixed(1) + 's';
       rafId = requestAnimationFrame(tick);
     };
 
-    toggle.addEventListener('click', playAll);
+    video.addEventListener('ended', function () {
+      if (rafId) cancelAnimationFrame(rafId);
+      toggle.classList.remove('is-hidden');
+      toggle.classList.add('is-ended');
+      toggle.setAttribute('aria-label', toggle.getAttribute('aria-label').replace('Play', 'Restart'));
+    });
+
+    toggle.addEventListener('click', function () {
+      if (rafId) cancelAnimationFrame(rafId);
+      toggle.classList.remove('is-ended');
+      toggle.classList.add('is-hidden');
+      video.pause();
+      video.currentTime = 0;
+      if (stopwatch) stopwatch.textContent = '0.0s';
+      startTime = performance.now();
+      video.play().catch(function () {});
+      rafId = requestAnimationFrame(tick);
+    });
   });
 
   // Theme toggle

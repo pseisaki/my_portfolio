@@ -1561,8 +1561,14 @@ ol.plain li {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 72px;
   margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .decision-compare {
+    gap: 48px;
+  }
 }
 
 .decision-compare-item {
