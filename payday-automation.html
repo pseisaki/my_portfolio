@@ -73,8 +73,8 @@
 
   <section class="section reveal" id="overview">
     <h2>Overview</h2>
-    <h3>Making Plum’s best saving rule easier to use</h3>
-    <p>Payday was already Plum’s highest-impact savings rule, with users saving around £80 each month on average.</p>
+    <p>This project started as part of a wider refactor of Plum’s automation rules, following changes in the design system.</p>
+    <p>For Payday, we went further than a visual refactor. It was Plum’s highest-impact saving rule, with users saving around £80 each month on average.</p>
     <p>The opportunity was not creating demand. It was removing friction from discovery and setup.</p>
   </section>
 
@@ -82,12 +82,14 @@
     <h2>The problem</h2>
     <div class="problem-layout">
       <div class="problem-text">
-        <h3>A valuable feature with unnecessary friction</h3>
-        <p>Payday already had strong adoption, with more than 250K users. But it was hard to find, and harder than other rules to set up.</p>
         <h3>Hard to complete</h3>
-        <p>The setup required too many decisions, and only around 30% of users completed it.</p>
+        <p>Payday had the most complex setup of all saving rules, with multiple inputs required. Only 35% of users who started setup completed it, the worst conversion across all rules.</p>
+        <h3>Hard to discover</h3>
+        <p>Payday was not present in onboarding, where automation habits are most likely to form. It was also less visible than Automatic and Weekly, which were surfaced by default.</p>
       </div>
-      <div class="img-placeholder">Problem screenshot</div>
+      <div class="problem-media">
+        <img data-lightbox="image" src="images/payday-problem.webp" alt="Where automations surfaced on Home and inside the automations hub, with Payday only reachable from the hub screen">
+      </div>
     </div>
   </section>
 
@@ -132,14 +134,35 @@
     <h2>Design decisions</h2>
 
     <div class="divider-list">
-      <div class="decision-item">
+      <div class="decision-item decision-item-stacked">
         <div class="decision-item-text">
           <div class="decision-index">Decision 1</div>
           <h3>Reduce setup effort</h3>
           <p><strong>Why:</strong> We believed fewer decisions would increase completion.</p>
           <p>We reduced setup to two inputs, cutting the average setup time in half with smart defaults and a simpler flow.</p>
         </div>
-        <div class="img-placeholder">Decision screenshot</div>
+        <div class="decision-compare">
+          <figure class="decision-compare-item">
+            <div class="phone-mockup decision-phone">
+              <div class="phone-mockup-island"></div>
+              <video class="phone-mockup-screen" data-lightbox="video" src="videos/payday-setup-old.mp4" muted playsinline preload="auto"></video>
+              <div class="compare-stopwatch">0.0s</div>
+            </div>
+            <figcaption>Old</figcaption>
+          </figure>
+          <figure class="decision-compare-item">
+            <div class="phone-mockup decision-phone">
+              <div class="phone-mockup-island"></div>
+              <video class="phone-mockup-screen" data-lightbox="video" src="videos/payday-setup-new.mp4" muted playsinline preload="auto"></video>
+              <div class="compare-stopwatch">0.0s</div>
+            </div>
+            <figcaption>New</figcaption>
+          </figure>
+          <button class="compare-toggle" type="button" aria-label="Play comparison">
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-restart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+          </button>
+        </div>
       </div>
 
       <div class="decision-item">
@@ -149,7 +172,7 @@
           <p><strong>Why:</strong> We believed earlier visibility would increase adoption.</p>
           <p>We introduced Payday in the onboarding automation step.</p>
         </div>
-        <div class="img-placeholder">Decision screenshot</div>
+        <img class="decision-img" data-lightbox="image" src="images/payday-decision-2.webp" alt="Payday added to the automation onboarding flow, with amount and frequency pre-filled">
       </div>
 
       <div class="decision-item">
@@ -159,7 +182,7 @@
           <p><strong>Why:</strong> We believed consistency would reduce uncertainty.</p>
           <p>We aligned the onboarding and in-app setup patterns.</p>
         </div>
-        <div class="img-placeholder">Decision screenshot</div>
+        <img class="decision-img" data-lightbox="image" src="images/payday-decision-3.webp" alt="Onboarding setup and in-app Payday setup shown side by side, using the same layout and inputs">
       </div>
     </div>
   </section>
@@ -202,7 +225,7 @@
     <div class="cs-footer-inner reveal">
       <div>
         <div class="next-label">Next project</div>
-        <a class="next-project" href="one-click-automation.html">One-Click Automation Setup →</a>
+        <a class="next-project" href="wealth-advisor.html">Plum's AI Wealth Advisor →</a>
       </div>
       <a href="index.html#work">All work</a>
     </div>

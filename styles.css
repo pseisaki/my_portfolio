@@ -1291,6 +1291,19 @@ ol.plain li {
     flex: 0 0 auto;
     margin: 0;
   }
+
+  .problem-layout .problem-media {
+    flex: 1 1 45%;
+    min-width: 0;
+  }
+}
+
+.problem-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-md);
+  display: block;
+  box-shadow: var(--shadow-lg);
 }
 
 /* ---------- Phone mockup (iPhone 16 Pro style frame) ---------- */
@@ -1528,6 +1541,111 @@ ol.plain li {
   .decision-item .img-placeholder.tall {
     min-height: 260px;
   }
+
+  .decision-item.decision-item-stacked {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .decision-item.decision-item-stacked .decision-item-text {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+/* ---------- Old/new comparison media (Decision 1 setup flow) ---------- */
+
+.decision-compare {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+.decision-compare-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.decision-compare-item figcaption {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.compare-stopwatch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  letter-spacing: 0.02em;
+}
+
+.compare-toggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-pill);
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 5;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.compare-toggle:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.compare-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.compare-toggle .icon-play {
+  margin-left: 2px;
+}
+
+.compare-toggle .icon-restart {
+  display: none;
+}
+
+.compare-toggle.is-ended .icon-play {
+  display: none;
+}
+
+.compare-toggle.is-ended .icon-restart {
+  display: block;
+}
+
+.compare-toggle.is-hidden {
+  display: none;
 }
 
 .decision .why {

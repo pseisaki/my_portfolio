@@ -24,6 +24,57 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Old/new comparison videos (e.g. Payday setup flow): both start together
+  // on tap, each with its own stopwatch, and neither loops or waits for the
+  // other, so the gap between finish times is the point. Once both have
+  // finished, the button becomes a restart control.
+  document.querySelectorAll('.decision-compare').forEach(function (compare) {
+    var videos = Array.prototype.slice.call(compare.querySelectorAll('video'));
+    var stopwatches = Array.prototype.slice.call(compare.querySelectorAll('.compare-stopwatch'));
+    var toggle = compare.querySelector('.compare-toggle');
+    if (!videos.length || !toggle) return;
+
+    var updateStopwatch = function (video, el) {
+      if (el) el.textContent = video.currentTime.toFixed(1) + 's';
+    };
+    var endedCount = 0;
+
+    // The "new" clip plays back a touch faster than real time, on top of
+    // already being the shorter recording, so the speed-up reads clearly.
+    videos.forEach(function (video) {
+      if (video.currentSrc.indexOf('new') !== -1 || video.getAttribute('src').indexOf('new') !== -1) {
+        video.playbackRate = 1.5;
+      }
+    });
+
+    videos.forEach(function (video, i) {
+      video.addEventListener('timeupdate', function () { updateStopwatch(video, stopwatches[i]); });
+      video.addEventListener('ended', function () {
+        endedCount++;
+        if (endedCount === videos.length) {
+          toggle.classList.remove('is-hidden');
+          toggle.classList.add('is-ended');
+          toggle.setAttribute('aria-label', 'Restart comparison');
+        }
+      });
+    });
+
+    var playAll = function () {
+      endedCount = 0;
+      toggle.classList.remove('is-ended');
+      toggle.classList.add('is-hidden');
+      toggle.setAttribute('aria-label', 'Playing comparison');
+      videos.forEach(function (video, i) {
+        video.pause();
+        video.currentTime = 0;
+        updateStopwatch(video, stopwatches[i]);
+      });
+      videos.forEach(function (video) { video.play().catch(function () {}); });
+    };
+
+    toggle.addEventListener('click', playAll);
+  });
+
   // Theme toggle
   var toggle = document.querySelector('.theme-toggle');
   if (toggle) {
