@@ -4,6 +4,26 @@
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.documentElement;
 
+  // Some mobile browsers render the native play-button overlay instead of
+  // honoring the autoplay attribute, even with muted+playsinline set.
+  // Explicitly nudging playback (and retrying once the video can play, or
+  // once the tab/page becomes visible again) fixes that reliably.
+  var autoplayVideos = document.querySelectorAll('.phone-mockup-screen[autoplay]');
+  autoplayVideos.forEach(function (video) {
+    video.muted = true;
+    var tryPlay = function () { video.play().catch(function () {}); };
+    tryPlay();
+    video.addEventListener('canplay', tryPlay);
+    video.addEventListener('loadedmetadata', tryPlay);
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) {
+      autoplayVideos.forEach(function (video) {
+        if (video.paused) video.play().catch(function () {});
+      });
+    }
+  });
+
   // Theme toggle
   var toggle = document.querySelector('.theme-toggle');
   if (toggle) {

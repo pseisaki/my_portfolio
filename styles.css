@@ -138,11 +138,6 @@ img {
   padding: 0 24px;
 }
 
-/* Selected work needs more room for the larger project screenshots */
-#work.page-section .wrap {
-  max-width: 1240px;
-}
-
 .wrap-wide {
   max-width: var(--max-w-wide);
   margin: 0 auto;
@@ -550,9 +545,9 @@ img {
 }
 
 .project-card .card-thumb {
-  flex: 0 0 645px;
-  width: 645px;
-  height: 475px;
+  flex: 0 0 440px;
+  width: 440px;
+  height: 324px;
   border-radius: var(--r-md);
   display: flex;
   align-items: center;
