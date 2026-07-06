@@ -637,7 +637,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center bottom;
 }
 
 .about-text p {
@@ -1067,6 +1067,20 @@ img {
 
   .cs-hero-img {
     width: min(360px, 78vw);
+  }
+}
+
+.payday-hero.cs-hero-wrap .cs-hero {
+  justify-content: center;
+}
+
+.payday-hero .cs-hero-img {
+  width: min(588px, 42vw);
+}
+
+@media (max-width: 640px) {
+  .payday-hero .cs-hero-img {
+    width: min(252px, 54.6vw);
   }
 }
 
@@ -1683,6 +1697,8 @@ ol.plain li {
     align-items: stretch;
   }
   .about-grid .about-avatar {
+    flex: none;
+    width: 220px;
     max-width: 220px;
     margin: 0 auto;
   }

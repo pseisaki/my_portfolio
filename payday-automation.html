@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payday Automation Redesign | Poppy Seisaki</title>
+<title>Payday Improvements | Poppy Seisaki</title>
 <script>
 (function () {
   var stored = localStorage.getItem('theme');
@@ -13,7 +13,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,119 +29,183 @@
   </div>
 </nav>
 
-<aside class="side-nav">
+<aside class="side-nav side-nav-wide">
+  <a href="#overview">Overview</a>
   <a href="#problem">Problem</a>
-  <a href="#goal">Goal</a>
-  <a href="#process">Process</a>
-  <a href="#final-ui">Final UI</a>
-  <a href="#results">Results</a>
-  <a href="#reflection">Reflection</a>
+  <a href="#strategy">Goals</a>
+  <a href="#insights">Insights</a>
+  <a href="#decisions">Decisions</a>
+  <a href="#impact">Impact</a>
+  <a href="#takeaways">Takeaways</a>
   <button class="side-nav-current" type="button" aria-expanded="false">
-    <span class="side-nav-current-label">Problem</span>
+    <span class="side-nav-current-label">Overview</span>
     <span class="side-nav-chevron">&#8963;</span>
   </button>
 </aside>
 
-<div class="wrap-wide">
+<div class="cs-hero-wrap payday-hero">
+  <div class="cs-hero">
+    <img class="cs-hero-img" src="images/payday-automation-card.webp" alt="Payday Improvements screens">
+  </div>
+</div>
 
-  <header class="cs-header">
+<div class="wrap-wide wealth-advisor-page">
+
+  <header class="cs-header cs-header-overlap">
     <span class="tag tag-shipped reveal">Shipped</span>
-    <h1 class="reveal">Payday Automation Redesign</h1>
+    <h1 class="reveal">Payday Improvements</h1>
 
     <div class="meta-strip reveal">
       <div class="meta-item">
         <div class="label">Role</div>
-        <div class="value">Product Designer, sole designer on this project</div>
+        <div class="value">Product Designer, end-to-end product ownership</div>
       </div>
       <div class="meta-item">
         <div class="label">Team</div>
-        <div class="value">1 PM, 1 lead engineer, 1 data analyst, 2 frontend, 2 backend (AI squad)</div>
+        <div class="value">1 PM, 1 data analyst, 2 frontend, 3 backend engineers</div>
       </div>
       <div class="meta-item">
         <div class="label">Timeframe</div>
-        <div class="value">2 sprints, shipped, results measured over following weeks and months</div>
+        <div class="value">2 sprints, shipped Q2 2026</div>
       </div>
     </div>
   </header>
 
+  <section class="section reveal" id="overview">
+    <h2>Overview</h2>
+    <h3>Making Plum’s best saving rule easier to use</h3>
+    <p>Payday was already Plum’s highest-impact savings rule, with users saving around £80 each month on average.</p>
+    <p>The opportunity was not creating demand. It was removing friction from discovery and setup.</p>
+  </section>
+
   <section class="section reveal" id="problem">
     <h2>The problem</h2>
-    <div class="headline-stat"><span class="num">35%</span> conversion: worst of all automation rules, despite being the highest-value one</div>
-    <p>The Payday Rule was the best-performing savings rule in the product. Users saved about £80/month on average once set up, but it was badly underused:</p>
-    <ul class="plain">
-      <li>Not included in onboarding at all</li>
-      <li>The most complex setup of all rules, only 35% conversion, worst across every rule</li>
-      <li>Less discoverable than the default rules</li>
-    </ul>
-
-    <div class="pull-quote">
-      <p>"[Placeholder customer comment. Replace with a real quote about the old setup being confusing or too many steps.]"</p>
-      <div class="source">[Source: customer support ticket, app review, or research session]</div>
+    <div class="problem-layout">
+      <div class="problem-text">
+        <h3>A valuable feature with unnecessary friction</h3>
+        <p>Payday already had strong adoption, with more than 250K users.</p>
+        <p>But it was hard to find, and harder than other rules to set up.</p>
+        <h3>Hard to discover</h3>
+        <p>Payday was not part of onboarding and had low visibility inside the app.</p>
+        <h3>Hard to complete</h3>
+        <p>The setup required too many decisions, and only around 30% of users completed it.</p>
+      </div>
+      <div class="img-placeholder">Problem screenshot</div>
     </div>
   </section>
 
-  <section class="section reveal" id="goal">
-    <h2>Goal</h2>
-    <div class="goal-card">
-      <p>Target: 45 to 50% of automation-active users adopting Payday. Working bet: the problem was access and friction, not demand.</p>
-    </div>
+  <section class="section reveal" id="strategy">
+    <h2>Goals</h2>
+    <p>Move Payday from a high-value but underused rule into a core saving habit.</p>
+    <p>For the business, this meant growing Payday share from 45% to 50% of automation-active users, while increasing deposits and AUM.</p>
+    <p>For users, this meant making Payday easier to discover, quicker to set up, and less effortful to trust.</p>
   </section>
 
-  <section class="section reveal" id="process">
-    <h2>Process</h2>
+  <section class="section reveal" id="insights">
+    <h2>Research insights</h2>
 
-    <div class="decision">
-      <div class="decision-index">Decision 1</div>
-      <h3>Strip setup to 2 inputs (amount and frequency), add smart defaults and a confirmation screen</h3>
-      <div class="why"><strong>Why:</strong> the multi-input form was the highest-friction setup flow anywhere in the product.</div>
-      <div class="img-row">
-        <div class="img-placeholder">Old multi-field setup form</div>
-        <div class="img-placeholder">New 2-input flow, side by side</div>
+    <div class="divider-list">
+      <div class="insight-item">
+        <div class="insight-num">01</div>
+        <h3>Payday already had product-market fit</h3>
+        <p>250K+ users had already enabled Payday without onboarding.</p>
+        <p>7 out of 10 interview participants were already using it.</p>
+        <p>The problem was not demand. It was activation.</p>
+        <span class="insight-source">Source: Automation usage data and New Pockets interviews.</span>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-num">02</div>
+        <h3>Setup friction was blocking adoption</h3>
+        <p>Payday had the longest setup of any savings rule.</p>
+        <p>Only around 30% of users completed the flow.</p>
+        <p>Confidence and ease of setup also scored only average.</p>
+        <span class="insight-source">Source: Setup funnel data, SUS survey, and app usability study.</span>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-num">03</div>
+        <h3>Discovery mattered as much as the flow</h3>
+        <p>Changing the Home entry point reduced Payday conversion.</p>
+        <p>The old “Get Started” panel converted at 33%.</p>
+        <p>The new Home carousel converted at 26%.</p>
+        <p>Surface and framing influenced behaviour as much as UX.</p>
+        <span class="insight-source">Source: Adoption analysis and pre-launch funnel data.</span>
       </div>
     </div>
-
-    <div class="decision">
-      <div class="decision-index">Decision 2</div>
-      <h3>Add Payday as a 3rd onboarding option, after Automatic and Weekly</h3>
-      <div class="why"><strong>Why:</strong> most automation adoption happens at onboarding, and Payday was invisible there entirely.</div>
-      <div class="img-placeholder">Onboarding step before/after</div>
-    </div>
-
   </section>
 
-  <section class="section reveal" id="final-ui">
-    <h2>Final UI</h2>
-    <p>This is the strongest visual asset in the case, lead with it.</p>
-    <div class="img-row">
-      <div class="img-placeholder tall">Old multi-field setup</div>
-      <div class="img-placeholder tall">New simplified flow</div>
+  <section class="section reveal" id="decisions">
+    <h2>Design decisions</h2>
+
+    <div class="divider-list">
+      <div class="decision-item">
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 1</div>
+          <h3>Reduce setup effort</h3>
+          <p><strong>Why:</strong> We believed fewer decisions would increase completion.</p>
+          <p>We reduced setup to two inputs and added smart defaults.</p>
+        </div>
+        <div class="img-placeholder">Decision screenshot</div>
+      </div>
+
+      <div class="decision-item">
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 2</div>
+          <h3>Improve discoverability</h3>
+          <p><strong>Why:</strong> We believed earlier visibility would increase adoption.</p>
+          <p>We introduced Payday in the onboarding automation step.</p>
+        </div>
+        <div class="img-placeholder">Decision screenshot</div>
+      </div>
+
+      <div class="decision-item">
+        <div class="decision-item-text">
+          <div class="decision-index">Decision 3</div>
+          <h3>Keep the experience familiar</h3>
+          <p><strong>Why:</strong> We believed consistency would reduce uncertainty.</p>
+          <p>We aligned the onboarding and in-app setup patterns.</p>
+        </div>
+        <div class="img-placeholder">Decision screenshot</div>
+      </div>
     </div>
-    <div class="img-placeholder">Onboarding placement screen</div>
   </section>
 
-  <section class="section reveal" id="results">
-    <h2>Results</h2>
-    <div class="results-grid">
-      <div class="result-item">Weekly adoption rose from <strong>55% to 64%</strong> (+16% relative), beating the 45 to 50% target.</div>
-      <div class="result-item">Monthly Payday users grew from <strong>250K to 265K</strong> in 2 months.</div>
-      <div class="result-item">AUM increased from <strong>£19M to £22M</strong>, 98% attributable to this change.</div>
-      <div class="result-item">Conversion improved from <strong>35% to 39%</strong> (+9% relative).</div>
-      <div class="result-item">Halo effect: all-rules automation adoption up <strong>22%</strong>.</div>
+  <section class="section reveal" id="impact">
+    <h2>Impact</h2>
+    <div class="impact-list">
+      <div class="impact-card">Weekly Payday adoption increased from <strong>55% to 64%</strong>.</div>
+      <div class="impact-card">Monthly Payday users grew from <strong>250K to 265K</strong>.</div>
+      <div class="impact-card">Setup conversion increased from <strong>30% to 39%</strong>.</div>
+      <div class="impact-card">Payday AUM grew from under <strong>£19M to over £22M</strong>.</div>
+      <div class="impact-card">All-rules automation adoption increased by <strong>22%</strong>.</div>
     </div>
 
-    <div class="callout callout-miss">
-      <strong>Honest miss:</strong> 39% conversion is still bottom of pack. Friction was reduced, not solved.
-    </div>
-
-    <div class="callout callout-limitation">
-      <strong>Honest limitation:</strong> no events tracking or GTM at launch. Onboarding placement and the simplified flow shipped together, so their individual effects can't be cleanly separated.
-    </div>
+    <p class="honest-miss">The honest miss: setup conversion improved, but stayed relatively low. It showed that simplifying the flow was not enough on its own.</p>
   </section>
 
-  <section class="section reveal" id="reflection">
-    <h2>Reflection</h2>
-    <p>The onboarding amount nudge didn't land as designed: 46% picked £0-50 vs. 31% in-app. The preset and framing logic needs rework.</p>
-    <p>Next: isolate the onboarding effect from the simplification effect with better instrumentation.</p>
+  <section class="section reveal" id="takeaways">
+    <h2>Takeaways</h2>
+    <div class="takeaway-grid">
+      <div class="takeaway-card">
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg></span>
+        <h3>Optimising the flow was not enough</h3>
+        <p>Simplifying setup helped, but only after users reached the flow.</p>
+        <p>Next time, I would spend more time finding the best moment to nudge users to automate.</p>
+      </div>
+      <div class="takeaway-card">
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.7 1.3c0 2-2.8 2.3-2.8 3.9"/><path d="M12 17.5v.01"/></svg></span>
+        <h3>Discovery needed to be more contextual</h3>
+        <p>Onboarding helped, but it is only one moment in the journey.</p>
+        <p>Next time, I would explore prompts based on user behaviour, not only fixed app surfaces.</p>
+      </div>
+      <div class="takeaway-card">
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M12 20V4"/><path d="M20 20v-6"/></svg></span>
+        <h3>Measurement needed to come earlier</h3>
+        <p>Tracking and GTM were still being defined close to launch.</p>
+        <p>Next time, I would align events, success metrics, and launch plans before implementation.</p>
+      </div>
+    </div>
   </section>
 
 </div>
@@ -157,6 +221,11 @@
     </div>
   </div>
 </footer>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <div class="lightbox-stage"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
