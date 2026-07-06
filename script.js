@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var toggle = compare.querySelector('.compare-toggle');
     if (!videos.length || !toggle) return;
 
-    var updateStopwatch = function (video, el) {
-      if (el) el.textContent = video.currentTime.toFixed(1) + 's';
-    };
     var endedCount = 0;
+    var startTime = null;
+    var running = videos.map(function () { return false; });
+    var rafId = null;
 
     // The "new" clip plays back a touch faster than real time, on top of
     // already being the shorter recording, so the speed-up reads clearly.
@@ -47,11 +47,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
+    // The stopwatch tracks real elapsed time (wall clock), not the video's
+    // own currentTime — currentTime always counts up to the file's fixed
+    // duration regardless of playbackRate, which would hide the speed-up.
+    var tick = function () {
+      var elapsed = (performance.now() - startTime) / 1000;
+      running.forEach(function (isRunning, i) {
+        if (isRunning) stopwatches[i].textContent = elapsed.toFixed(1) + 's';
+      });
+      if (running.some(Boolean)) rafId = requestAnimationFrame(tick);
+    };
+
     videos.forEach(function (video, i) {
-      video.addEventListener('timeupdate', function () { updateStopwatch(video, stopwatches[i]); });
       video.addEventListener('ended', function () {
+        running[i] = false;
         endedCount++;
         if (endedCount === videos.length) {
+          if (rafId) cancelAnimationFrame(rafId);
           toggle.classList.remove('is-hidden');
           toggle.classList.add('is-ended');
           toggle.setAttribute('aria-label', 'Restart comparison');
@@ -60,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     var playAll = function () {
+      if (rafId) cancelAnimationFrame(rafId);
       endedCount = 0;
       toggle.classList.remove('is-ended');
       toggle.classList.add('is-hidden');
@@ -67,9 +80,12 @@ document.addEventListener('DOMContentLoaded', function () {
       videos.forEach(function (video, i) {
         video.pause();
         video.currentTime = 0;
-        updateStopwatch(video, stopwatches[i]);
+        running[i] = true;
+        stopwatches[i].textContent = '0.0s';
       });
+      startTime = performance.now();
       videos.forEach(function (video) { video.play().catch(function () {}); });
+      rafId = requestAnimationFrame(tick);
     };
 
     toggle.addEventListener('click', playAll);
