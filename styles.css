@@ -35,8 +35,19 @@
 
   --max-w: 1000px;
   --max-w-wide: 1000px;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-hero-body: "Fraunces", Georgia, serif;
+  --font-display: "Manrope", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Responsive type scale (home + wealth-advisor only). Mobile values below;
+     tablet/desktop overrides live in the existing 768px/1320px breakpoints. */
+  --fs-hero: 56px;
+  --fs-hero-sub: 22px;
+  --fs-h2: 36px;
+  --fs-card-title: 26px;
+  --fs-cs-h1: 44px;
+  --fs-cs-h2: 32px;
+  --fs-cs-h3: 23px;
+  --fs-body: 17.5px;
+  --fs-label: 13px;
 
   font-size: 18px;
 }
@@ -60,6 +71,36 @@
   --tag-shipped-bg: rgba(75, 123, 255, 0.22);
   --toggle-bg: rgba(255, 255, 255, 0.08);
   --divider: rgba(255, 255, 255, 0.12);
+}
+
+/* Type scale tablet/desktop steps, same breakpoints used elsewhere on the
+   site (.side-nav, .decision-item, etc.) */
+@media (min-width: 768px) {
+  :root {
+    --fs-hero: 82px;
+    --fs-hero-sub: 26px;
+    --fs-h2: 45px;
+    --fs-card-title: 30px;
+    --fs-cs-h1: 60px;
+    --fs-cs-h2: 39px;
+    --fs-cs-h3: 26px;
+    --fs-body: 18.5px;
+    --fs-label: 13.5px;
+  }
+}
+
+@media (min-width: 1320px) {
+  :root {
+    --fs-hero: 120px;
+    --fs-hero-sub: 31px;
+    --fs-h2: 60px;
+    --fs-card-title: 36px;
+    --fs-cs-h1: 80px;
+    --fs-cs-h2: 50px;
+    --fs-cs-h3: 29px;
+    --fs-body: 20px;
+    --fs-label: 14px;
+  }
 }
 
 * {
@@ -106,6 +147,13 @@ img {
   max-width: var(--max-w-wide);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* Wealth Advisor reads better as a narrower column: 15% narrower than the
+   shared .wrap-wide (1000px), scoped so payday-automation / one-click, which
+   also use .wrap-wide, are unaffected. */
+.wrap-wide.wealth-advisor-page {
+  max-width: 850px;
 }
 
 /* ---------- Aurora glow, fixed behind the floating nav only ---------- */
@@ -300,10 +348,13 @@ img {
 
 .hero-greeting {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(3.4rem, 13vw, 7.78rem);
-  line-height: 1.18;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  font-size: var(--fs-hero);
+  line-height: 0.94;
+  /* Spec called for -0.06 to -0.08em, but at this size/weight that collapses
+     the &nbsp; in "Poppy Seisaki" into nothing. -0.03em keeps it tight
+     without breaking the word gap. */
+  letter-spacing: -0.03em;
   margin: 0;
   padding-bottom: 0.08em;
   color: var(--text);
@@ -312,8 +363,8 @@ img {
 }
 
 .hero-greeting em {
-  font-style: italic;
-  font-weight: 400;
+  font-style: normal;
+  font-weight: 800;
   white-space: nowrap;
 }
 
@@ -324,12 +375,11 @@ img {
 }
 
 .hero-line {
-  font-family: var(--font-hero-body);
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--text-soft);
-  font-size: clamp(1.3rem, 3vw, 2.22rem);
-  line-height: 1.45;
+  font-size: var(--fs-hero-sub);
+  line-height: 1.5;
   letter-spacing: normal;
   margin: 0;
   padding-bottom: 0.1em;
@@ -397,23 +447,27 @@ img {
 /* ---------- Section shell ---------- */
 
 .page-section {
-  padding: 56px 0 120px;
+  padding: 72px 0 140px;
 }
 
 .section-label {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-label);
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
   color: var(--text-faint);
   margin-bottom: 18px;
 }
 
 .section-heading {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
   font-weight: 700;
-  letter-spacing: -0.02em;
-  margin: 0 0 40px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0 0 48px;
   color: var(--text);
 }
 
@@ -458,15 +512,18 @@ img {
 }
 
 .project-card h2 {
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-family: var(--font-display);
+  font-size: var(--fs-card-title);
   font-weight: 700;
+  line-height: 1.05;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.04em;
   color: var(--text);
 }
 
 .project-card .metric {
-  font-size: clamp(0.95rem, 2.5vw, 1.44rem);
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-label);
   color: var(--text-soft);
   font-weight: 500;
   white-space: nowrap;
@@ -480,14 +537,15 @@ img {
 }
 
 .project-card .tag {
-  font-size: clamp(0.85rem, 2vw, 1.248rem);
+  font-size: var(--fs-label);
   padding: 6px 18px;
   white-space: nowrap;
 }
 
 .project-card .project-year {
-  font-size: clamp(0.85rem, 2vw, 1.248rem);
-  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-label);
+  font-weight: 500;
   color: var(--text-faint);
 }
 
@@ -525,11 +583,17 @@ img {
 
 .tag {
   display: inline-block;
-  font-size: 0.78rem;
+  font-size: 0.624rem;
   font-weight: 600;
   padding: 5px 14px;
   border-radius: var(--r-pill);
   color: var(--text-soft);
+}
+
+.wealth-advisor-page .tag {
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-label);
+  font-weight: 500;
 }
 
 .tag-ongoing {
@@ -584,7 +648,8 @@ img {
 .about-text p {
   color: var(--text-soft);
   margin: 0 0 18px;
-  font-size: 1.02rem;
+  font-size: var(--fs-body);
+  font-weight: 400;
 }
 
 .about-facts {
@@ -595,11 +660,14 @@ img {
 }
 
 .fact-pill {
-  background: var(--glass-bg);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   color: var(--text-soft);
-  font-size: 0.85rem;
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-label);
   font-weight: 500;
   padding: 9px 18px;
   border-radius: var(--r-pill);
@@ -660,7 +728,8 @@ img {
 .faq-item p {
   margin: 0 0 26px;
   color: var(--text-soft);
-  font-size: 0.98rem;
+  font-size: var(--fs-body);
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -688,7 +757,8 @@ img {
 }
 
 .testimonial-quote {
-  font-size: 0.98rem;
+  font-size: var(--fs-body);
+  font-weight: 400;
   color: var(--text-soft);
   margin: 0 0 26px;
   font-style: italic;
@@ -734,6 +804,10 @@ img {
 
 /* ---------- Minimal in-page side navigation ---------- */
 
+/* Below 1320px this renders as a compact pill showing only the current
+   section (driven by the scroll-spy in script.js). Tapping it reveals the
+   full link list stacked above the pill; the fixed bottom edge means the
+   list grows upward without shifting the pill itself. */
 .side-nav {
   position: fixed;
   left: 50%;
@@ -741,11 +815,12 @@ img {
   top: auto;
   transform: translateX(-50%);
   z-index: 40;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: calc(100% - 24px);
-  max-width: 360px;
-  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  width: max-content;
+  max-width: min(240px, calc(100% - 32px));
   padding: 8px;
   border-radius: var(--r-lg);
   background: var(--glass-bg-strong);
@@ -755,16 +830,21 @@ img {
 }
 
 .side-nav a {
-  font-size: 0.7rem;
+  display: none;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-faint);
-  padding: 8px 6px;
+  padding: 10px 14px;
   border-radius: var(--r-pill);
-  text-align: center;
+  text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   transition: color .25s ease, background-color .25s ease;
+}
+
+.side-nav.open a {
+  display: block;
 }
 
 .side-nav a:hover {
@@ -777,39 +857,51 @@ img {
   background: var(--tag-ongoing-bg);
 }
 
-/* 7-item variant (Wealth Advisor): 4 columns on mobile keeps it to 2 rows */
-.side-nav-wide {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 400px;
+.side-nav-current {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--r-pill);
+  cursor: pointer;
 }
 
-/* Tablet: single row, still floating at the bottom */
-@media (min-width: 768px) and (max-width: 1319px) {
-  .side-nav {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    max-width: calc(100% - 32px);
-    border-radius: var(--r-pill);
-  }
-  .side-nav a {
-    font-size: 0.78rem;
-    padding: 9px 16px;
-    text-align: left;
-    overflow: visible;
-    text-overflow: unset;
-  }
+.side-nav-current:hover {
+  background: var(--glass-hover);
 }
 
-/* Desktop: vertical sidebar */
+.side-nav-current-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.side-nav-chevron {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  color: var(--text-faint);
+  transition: transform .25s ease;
+}
+
+.side-nav.open .side-nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* Desktop: vertical sidebar, all links always visible, no pill toggle */
 @media (min-width: 1320px) {
   .side-nav {
     left: 28px;
     bottom: auto;
     top: 50%;
     transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
     width: auto;
     max-width: none;
     padding: 10px;
@@ -817,11 +909,15 @@ img {
     box-shadow: var(--shadow-sm);
   }
   .side-nav a {
+    display: block;
     font-size: 0.78rem;
     padding: 9px 16px;
     text-align: left;
     overflow: visible;
     text-overflow: unset;
+  }
+  .side-nav-current {
+    display: none;
   }
 }
 
@@ -866,7 +962,8 @@ img {
 
 .insight-source {
   display: block;
-  font-size: 0.82rem;
+  font-size: var(--fs-label);
+  font-weight: 500;
   font-style: italic;
   color: var(--text-faint);
   margin-top: 4px;
@@ -875,13 +972,18 @@ img {
 /* ---------- Takeaway cards ---------- */
 
 .takeaway-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
+@media (max-width: 640px) {
+  .takeaway-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .takeaway-card {
-  flex: 1 1 260px;
   background: var(--glass-bg);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -897,11 +999,15 @@ img {
 }
 
 .takeaway-card .takeaway-icon {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
   color: var(--accent-1);
   display: block;
   margin-bottom: 18px;
+}
+
+.takeaway-card .takeaway-icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
 }
 
 .takeaway-card h3 {
@@ -1018,6 +1124,13 @@ img {
   margin-bottom: 6px;
 }
 
+.wealth-advisor-page .meta-strip .label {
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
 .meta-strip .value {
   font-size: 0.9rem;
   color: var(--text);
@@ -1034,6 +1147,44 @@ img {
 /* This case study reads better with a lot more breathing room between sections */
 .wealth-advisor-page .section {
   margin-bottom: 150px;
+}
+
+/* Wealth Advisor heading typeface: Manrope, bold across the board, sized off
+   the shared responsive --fs-cs-* scale (scoped here so payday-automation /
+   one-click-automation, which share .cs-header/.section/.takeaway-card,
+   are unaffected). */
+.wealth-advisor-page .cs-header h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-cs-h1);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.wealth-advisor-page .section h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-cs-h2);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  /* 20% more room below the heading than the shared .section h2 default (22px) */
+  margin-bottom: 26.4px;
+}
+
+.wealth-advisor-page .section h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-cs-h3);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.wealth-advisor-page .takeaway-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-cs-h3);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .section h2 {
@@ -1054,6 +1205,11 @@ img {
 .section p {
   color: var(--text-soft);
   margin: 0 0 16px;
+}
+
+.wealth-advisor-page .section p {
+  font-size: var(--fs-body);
+  font-weight: 400;
 }
 
 .headline-stat {
@@ -1210,6 +1366,13 @@ ol.plain li {
   margin-bottom: 12px;
 }
 
+.wealth-advisor-page .decision-index {
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
 /* Text-first variant (Wealth Advisor): text left, image right on wider screens */
 .decision-item {
   display: flex;
@@ -1230,6 +1393,87 @@ ol.plain li {
   border-radius: var(--r-md);
   display: block;
   margin: 0 auto;
+}
+
+/* ---------- Decision media lightbox ---------- */
+
+[data-lightbox] {
+  cursor: zoom-in;
+  transition: transform .25s ease;
+}
+
+[data-lightbox]:hover {
+  transform: scale(1.015);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility 0s linear .25s;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .25s ease;
+}
+
+.lightbox-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 92vw;
+  max-height: 88vh;
+}
+
+.lightbox-stage > img,
+.lightbox-stage > video {
+  max-width: min(92vw, 900px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+
+/* A phone-mockup video is cloned frame-and-all, so scale the whole frame up
+   instead of just the video, using the same --phone-w the frame's own CSS
+   already sizes everything off (border radius, island, screen inset). */
+.lightbox-stage .phone-mockup {
+  --phone-w: min(80vw, calc(88vh * 402 / 874), 420px);
+  margin: 0;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-pill);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  box-shadow: var(--shadow-md);
+  color: var(--text);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
 }
 
 /* A phone-mockup used directly inside a decision (single video), sized to
@@ -1363,6 +1607,7 @@ ol.plain li {
   font-style: italic;
   color: var(--text-soft);
   font-weight: 400;
+  font-size: var(--fs-body);
 }
 
 .callout {
@@ -1446,12 +1691,6 @@ ol.plain li {
     max-width: 220px;
     margin: 0 auto;
   }
-  .hero-greeting {
-    font-size: clamp(2.6rem, 9vw, 4.2rem);
-  }
-  .hero-line {
-    font-size: clamp(1.15rem, 4vw, 1.5rem);
-  }
   .decision {
     padding: 24px 22px;
   }
@@ -1502,13 +1741,6 @@ ol.plain li {
     min-height: auto;
     align-items: flex-start;
     padding: 84px 0 48px;
-  }
-  .hero-greeting {
-    font-size: clamp(2.2rem, 11vw, 3rem);
-    line-height: 1.2;
-  }
-  .hero-line {
-    font-size: clamp(1rem, 4.6vw, 1.2rem);
   }
   .nav-inner {
     padding: 5px;

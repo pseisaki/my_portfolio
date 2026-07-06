@@ -13,7 +13,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,6 +37,10 @@
   <a href="#decisions">Decisions</a>
   <a href="#impact">Impact</a>
   <a href="#takeaways">Takeaways</a>
+  <button class="side-nav-current" type="button" aria-expanded="false">
+    <span class="side-nav-current-label">Overview</span>
+    <span class="side-nav-chevron">&#8963;</span>
+  </button>
 </aside>
 
 <div class="cs-hero-wrap">
@@ -69,25 +73,24 @@
 
   <section class="section reveal" id="overview">
     <h2>Overview</h2>
-    <p>Plum's chat assistant already helps people save and invest. Plum's AI Wealth Advisor turns that into a full plan.</p>
-    <p>Pick a goal, like retirement or a house deposit. Get a monthly deposit, a portfolio allocation, and a projection, ready in minutes.</p>
-    <p>It replaces the cost and intimidation of seeing a human advisor.</p>
+    <p>Plum’s AI Wealth Advisor helps users turn a savings goal into a plan. It gives people a lower-pressure way to start financial planning.</p>
+    <p>Each plan shows how much to save, where to put it, and how it could grow. The core loop is simple: tell it your goal → get a plan → fund it.</p>
+    <p>The bigger vision is a full wealth advisor inside Plum. One that understands your finances, tracks progress, and guides next steps.</p>
   </section>
 
   <section class="section reveal" id="problem">
     <h2>The problem</h2>
     <div class="problem-layout">
       <div class="problem-text">
-        <p>Two problems:</p>
-        <ol class="plain problem-list">
-          <li><strong>Nobody was finding the advisor.</strong> <span class="num">85%</span> of eligible users never opened it. It lived deep in the app with no clear entry point. Essentially hidden.</li>
-          <li><strong>Those who found it gave up before getting anything useful.</strong> 9 in 10 who started a conversation never saw a plan. The conversations were too long and asked for too much upfront. When a plan finally appeared, it was plain text in the chat, with no way to interact with it.</li>
-        </ol>
-        <p>The result: a 10 to 12% plan save rate and most of the product's potential going untapped.</p>
-      </div>
+        
+        <h3>People couldn't find it</h3>
+         <p> Plan Builder sat behind a generic “Ask Plum” entry point. Most eligible users never knew it existed, and 85% never opened it. </p>
+        <h3>People left before getting a plan</h3>
+         <p>The chat asked too much too soon, and the final plan was easy to miss. As a result, 9 out of 10 users never saw one.</p>
+    </div>
       <div class="phone-mockup">
         <div class="phone-mockup-island"></div>
-        <video class="phone-mockup-screen" src="videos/old-chat.mp4" autoplay loop muted playsinline></video>
+        <video class="phone-mockup-screen" data-lightbox="video" src="videos/old-chat.mp4" autoplay loop muted playsinline></video>
       </div>
     </div>
   </section>
@@ -104,22 +107,23 @@
     <div class="divider-list">
       <div class="insight-item">
         <div class="insight-num">01</div>
-        <h3>Users abandon before a plan is even generated</h3>
-        <p>People dropped off before a plan even appeared. Too many questions, confusing wording, wrong recommendations, any one was enough to end the flow.</p>
+        <h3>Users abandoned the flow before seeing a plan</h3>
+        <p>People dropped off before a plan even appeared. Too many questions made the flow feel like work. Confusing wording could end the journey.</p>
         <span class="insight-source">Source: internal plan creation evaluations, qualitative review</span>
       </div>
 
       <div class="insight-item">
         <div class="insight-num">02</div>
-        <h3>People will use an AI plan, but only if they can still touch it</h3>
-        <p>Tested automatic vs. editable plans with 10 people. Automatic felt generic and out of their hands. Editable won. Control over deposit and target date mattered most.</p>
+        <h3>Users wanted AI help, but with control</h3>
+        <p> We tested two plan concepts with 10 people. Automatic plans felt generic and out of their hands. Editable plans felt safer because users could adjust them.</p>
         <span class="insight-source">Source: Wealth Plans concept test, December 2025, n=10</span>
       </div>
 
       <div class="insight-item">
         <div class="insight-num">03</div>
         <h3>Advice is undersold to the people who need it most</h3>
-        <p>People want reassurance, not bigger returns. Many rule themselves out. They assume advice is only for people with more money. Even past advisor clients wanted a one-off check-in, not a subscription.</p>
+         <p>Many ruled themselves out of advice. They assumed it was only for people with more money.</p>
+         <p>Even past advisor clients didn't want a long-term advisor. They wanted help when needed.</p>
         <span class="insight-source">Source: Financial Advisor Study, May 2026, n=345 survey plus 8 interviews</span>
       </div>
     </div>
@@ -132,52 +136,57 @@
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 1</div>
-          <h3>Add "Start a Plan" to the homepage's suggested next actions</h3>
-          <p><strong>Why:</strong> 85% never opened the advisor. It had no home beyond a buried nav spot. Now it's a suggested next action on the homepage.</p>
+          <h3>Improve discovery</h3>
+          <p><strong>Why:</strong> We believed a clearer Home entry point would increase adoption, because users were unlikely to search for planning behind a generic “Ask Plum” action.</p>
+          <p>This gave planning a clearer place in the app. Users no longer had to discover it by accident.</p>
         </div>
-        <img class="decision-img" src="images/decision-1-start-a-plan.webp" alt="Homepage with the new 'Start a Plan' suggested action">
+        <img class="decision-img" data-lightbox="image" src="images/decision-1-start-a-plan.webp" alt="Homepage with the new 'Start a Plan' suggested action">
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 2</div>
-          <h3>Replace the open conversation with a 3-question modal</h3>
-          <p><strong>Why:</strong> too many, repeated, unclear questions caused drop-off. Now capped at 3: multiple choice, type-your-own option, no sensitive data upfront.</p>
+          <h3>Shorten time to value</h3>
+          <p><strong>Why:</strong> We believed fewer, clearer questions would reduce drop-off. So we capped the flow at three questions, clear</p>
+          <p> We replaced the open chat with a 3-question modal, using suggested answers with a type-your-own option </p>
         </div>
         <div class="phone-mockup decision-phone">
           <div class="phone-mockup-island"></div>
-          <video class="phone-mockup-screen" src="videos/modal.mp4" autoplay loop muted playsinline></video>
+          <video class="phone-mockup-screen" data-lightbox="video" src="videos/modal.mp4" autoplay loop muted playsinline></video>
         </div>
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 3</div>
-          <h3>Generate 3 plan options instead of 1, then open an editable detail screen</h3>
-          <p><strong>Why:</strong> a single automatic plan felt generic and out of people's control. Now AI generates a plan in seconds, slow, balanced, or fast-track. Control stays with the user: every option opens into a plan they can edit directly, not one they're locked into.</p>
+          <h3>Build trust through choice</h3>
+          <p><strong>Why:</strong> We believed one AI-generated plan could feel generic. So we showed three plan suggestions instead.</p>
+          <p> Each suggestion opened into a dedicated plan detail screen. Users could review, compare, and edit before saving.</p>
         </div>
         <div class="phone-mockup decision-phone">
           <div class="phone-mockup-island"></div>
-          <video class="phone-mockup-screen" src="videos/artefact_suggestions.mp4" autoplay loop muted playsinline></video>
+          <video class="phone-mockup-screen" data-lightbox="video" src="videos/artefact_suggestions.mp4" autoplay loop muted playsinline></video>
         </div>
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 4</div>
-          <h3>Add live progress tracking to saved plans</h3>
-          <p><strong>Why:</strong> a saved plan on its own doesn't tell you if you're still on track. Now each one shows its status at a glance, on track or behind schedule. It surfaces a concrete next step when it slips. Reassurance becomes ongoing, not a one-time confirmation.</p>
+          <h3>Make progress visible</h3>
+          <p><strong>Why:</strong> We believed saved plans needed to stay useful after creation. So we added progress tracking to each plan.</p>
+          <p>Users could see if they were on track or falling behind. The plan became something they could return to.</p>
         </div>
-        <img class="decision-img" src="images/tracking.webp" alt="Saved plan detail showing on-track status and suggested action when behind schedule">
+        <img class="decision-img" data-lightbox="image" src="images/tracking.webp" alt="Saved plan detail showing on-track status and suggested action when behind schedule">
       </div>
 
       <div class="decision-item">
         <div class="decision-item-text">
           <div class="decision-index">Decision 5</div>
-          <h3>Run a CRM campaign to people who'd never opened the advisor</h3>
-          <p><strong>Why:</strong> no in-product fix reaches people who never see the feature. A targeted campaign drove +140% planning sessions vs. control. 85% were first-time openers.</p>
+          <h3>Extend reach beyond the app</h3>
+          <p><strong>Why:</strong> We knew product changes alone would not reach everyone. So we supported the redesign with CRM.</p>
+          <p>This brought first-time users into the new flow.</p>
         </div>
-        <img class="decision-img" src="images/crm.webp" alt="CRM campaign creative: Plan with Plum">
+        <img class="decision-img" data-lightbox="image" src="images/crm.webp" alt="CRM campaign creative: Plan with Plum">
       </div>
     </div>
   </section>
@@ -185,9 +194,9 @@
   <section class="section reveal" id="impact">
     <h2>Impact</h2>
     <div class="impact-list">
-      <div class="impact-card">Sessions nearly doubled post-launch: <strong>3,343 to 11,942</strong>.</div>
+      <div class="impact-card">Planning sessions grew from <strong>3,343 to 11,942</strong>.</div>
       <div class="impact-card">Plan save rate climbed from a <strong>12% baseline to a 15.2% peak</strong>.</div>
-      <div class="impact-card">Plan Viewed → Saved conversion: <strong>48% to 54.4%</strong>.</div>
+      <div class="impact-card">Viewed-to-saved conversion improved from <strong>48% to 54.4%</strong>.</div>
       <div class="impact-card">CRM campaign drove <strong>+140% more planning sessions</strong> vs. control, with 85% first-time planners.</div>
     </div>
 
@@ -198,19 +207,28 @@
     <h2>Takeaways</h2>
     <div class="takeaway-grid">
       <div class="takeaway-card">
-        <span class="takeaway-icon">⚙</span>
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg></span>
         <h3>Bring engineers in earlier</h3>
-        <p>There was a real gap between the vision and what we could build. We only found out how big partway through. Next time, engineers see the concept before it's final, not after.</p>
+        <p>There was a real gap between the vision and what we could build. We only found out how big partway through.</p>
+        <p> Next time, engineers see the concept before it's final, not after.</p>
       </div>
       <div class="takeaway-card">
-        <span class="takeaway-icon">◎</span>
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.7 1.3c0 2-2.8 2.3-2.8 3.9"/><path d="M12 17.5v.01"/></svg></span>
         <h3>Question the format, not just the flow</h3>
-        <p>I designed around the assumption that people want a goal-first plan. I'd test whether broader coaching is what people actually want, before building around it.</p>
+        <p>Although we improved the goal-first journey, we never validated whether starting with a goal was the right approach. </p>
+        <p>Next time I'd test whether broader coaching is what people actually want, before building around it.</p>
       </div>
       <div class="takeaway-card">
-        <span class="takeaway-icon">⧉</span>
-        <h3>Sequence releases, don't bundle them</h3>
-        <p>We wanted to ship too many things at once. That made it impossible to track the impact of any single decision. Next time I'd push the team to prioritise and stagger releases from the start.</p>
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+        <h3>Sequence releases more clearly</h3>
+        <p>We wanted to ship too many things at once. That made it impossible to track the impact of any single decision.</p>
+        <p>Next time I'd push the team to prioritise and stagger releases from the start.</p>
+      </div>
+      <div class="takeaway-card">
+        <span class="takeaway-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M12 20V4"/><path d="M20 20v-6"/></svg></span>
+        <h3>Measure the outcome, not the artifact</h3>
+        <p>We prioritised plan save rate because the plan was the new experience. But the real win is users starting to put money aside.</p>
+        <p>Next time, I'd give saving actions more weight alongside plan saves, especially within the first 7 days</p>
       </div>
     </div>
   </section>
@@ -228,6 +246,11 @@
     </div>
   </div>
 </footer>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <div class="lightbox-stage"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
