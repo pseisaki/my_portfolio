@@ -1564,6 +1564,18 @@ ol.plain li {
     flex: 1 1 auto;
     width: 100%;
   }
+
+  .decision-item.decision-item-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ---------- Discovery section rows (Wealth Advisor) ---------- */
+
+.discovery-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
 }
 
 /* ---------- Old/new comparison media (Decision 1 setup flow) ---------- */
