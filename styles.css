@@ -1433,6 +1433,12 @@ ol.plain li {
   margin: 0 auto;
 }
 
+/* Annotated screenshots whose sticky-note callouts bleed to the canvas edge:
+   a corner radius would clip into their content, so leave corners square. */
+.decision-item .decision-img.decision-img-flush {
+  border-radius: 0;
+}
+
 /* ---------- Decision media lightbox ---------- */
 
 [data-lightbox] {
@@ -1594,8 +1600,15 @@ ol.plain li {
   color: var(--text-faint);
 }
 
-.decision-compare-item img {
-  height: 415px;
+/* ---------- Exploration concept comparison (plain screenshots, not phone mockups) ---------- */
+/* Sized so both fit side by side within the 802px case-study column on desktop;
+   below ~810px viewport the shared .decision-compare flex-wrap collapses them to a stack. */
+.exploration-compare {
+  gap: 40px;
+}
+
+.exploration-compare .decision-compare-item img {
+  height: 370px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
