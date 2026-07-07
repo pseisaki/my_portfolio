@@ -1439,6 +1439,11 @@ ol.plain li {
   border-radius: 0;
 }
 
+/* 10% smaller than the standard 415px decision-img height */
+.decision-item .decision-img.decision-img-sm {
+  height: 374px;
+}
+
 /* ---------- Decision media lightbox ---------- */
 
 [data-lightbox] {
