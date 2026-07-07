@@ -1220,6 +1220,13 @@ img {
   color: var(--text);
 }
 
+.section h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
 .section p {
   color: var(--text-soft);
   margin: 0 0 16px;
@@ -1585,6 +1592,16 @@ ol.plain li {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-faint);
+}
+
+.decision-compare-item img {
+  height: 415px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  display: block;
+  margin: 0;
 }
 
 .compare-stopwatch {
