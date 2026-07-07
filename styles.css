@@ -1605,7 +1605,7 @@ ol.plain li {
    below ~810px viewport the shared .decision-compare flex-wrap collapses them to a stack. */
 .exploration-compare {
   gap: 40px;
-  margin-bottom: 19px; /* 18% more than the section's standard 16px paragraph-to-heading gap */
+  margin-bottom: 48px;
 }
 
 .exploration-compare .decision-compare-item img {
